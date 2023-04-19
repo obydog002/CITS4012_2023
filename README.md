@@ -33,10 +33,10 @@ NOTE:
 **If you want to do individual or already have group members in mind**, Please Submit Group EOI by EOI Due (23 April 2023 11:59PM)
 Otherwise, your group members will be selected by our teaching team. 
 
-**After the Group Release date (24 April 2023): YOU MUST CONTACT YOUR GROUP MEMBER BY THE GROUP REVISION DUE (26 April 2023).**
+**After the Group Release date (24 April 2023 11:59 PM): YOU MUST CONTACT YOUR GROUP MEMBER BY THE GROUP REVISION DUE (26 April 2023 11:59 PM).**
 **If you want to change your group to individual after EOI due,**  you can revise it by the Assignment Group Revision Due. However, in this case, you should get your team member's agreement. Please email the Unit Coordinator with your group member's agreement.
 
-**If you do not respond your group member by the Group Revision Due (26 April 2023)**, and your group member requests for working as an individual, you must work the Assignment individually.
+**If you do not respond your group member by the Group Revision Due (26 April 2023 11:59 PM)**, and your group member requests for working as an individual, you must work the Assignment individually.
 
 
 <br/>
