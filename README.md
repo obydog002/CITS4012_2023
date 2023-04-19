@@ -81,7 +81,7 @@ Different types of features should be extracted in order to improve the performa
 
 
 
-**2) Sequence Model (Recurrent Model with Attention) [5 marks]**
+**2) Sequence QA Model (Recurrent Model with Attention) [5 marks]**
 -refer to Lecture 7 and [Lab7(Will be released by 24/04/2023 9AM)]
 In this QA framework, you are to implement a sequence model using RNN  (such as RNN, LSTM, Bi-LSTM, GRU, Bi-GRU, etc.) with attention. 
 
@@ -109,6 +109,11 @@ The testing result and discussion should be described in the report  (refer to s
 
 
 ## <img src="https://em-content.zobj.net/thumbs/120/facebook/355/page-facing-up_1f4c4.png" width="30" />4.Documentation [6 marks]
+You should submit pdf version of the assignment report (8 pages Maximum - excluding reference and appendix). The detailed documentation requirement for each section can be found above section 1. DataSet, 2. QA Model Implementation, and 3. Model Testing.
+
+**NOTE:
+The justification MUST be based on the previous literature reference (incl. international conference or journal publication) or empirical evaluation. (Check the definition  empiritcal evaluation 
+We do not mark the section (or all assignment) if it is not implemented as described in the report.**
 
 
 
@@ -131,4 +136,15 @@ The testing result and discussion should be described in the report  (refer to s
 
 ## <img src="https://em-content.zobj.net/thumbs/120/google/350/person-raising-hand_1f64b.png" width="30" />FAQ
 - How can we make POS Tag or NER Tag to the embedding? 
-- 
+
+**Question: My Model performs really bad (Low F1). What did I do wrong?**
+Answer: Please don't worry about the low performance as our training dataset is very small and your model is very basic deep learning model. Of course, there is something wrong with your code if it comes out below 10% (0.1).
+
+**Question: Do I need to save the word embedding model or Recurrent models?**
+Answer: We highly recommend you to save your best word embedding model, and load it when you use it in your code. Otherwise, it is sometimes removed and overwrite all your code so that you need to re-run the whole code again.
+
+**Question: Is there any other marking scheme/marking criteria available for the assignment?**
+Answer: The assignment specification is extremely detailed. The marking will be directly conducted based on the specification. It means you will get the full mark if you fulfill all the requirement that we mentioned in the specification.
+
+**Question: What do I need to write in the justification or explanation? How much do I need to articulate?**
+Answer: We recommend conducting empirical evaluation. Empirical evaluation refers to the appraisal of a theory by observation in experiments. The key to good empirical evaluation is the proper design and execution of the experiments so that the particular factors to be tested can be easily separated from other confounding factors. Hence, visualizing the comparison of different testing results is a good way to justify your decision. Explain the trends based on your understanding. You can find another way (other than comparing different models) as well - like citing the peer-reviewed publications. 
