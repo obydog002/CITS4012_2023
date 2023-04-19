@@ -1,8 +1,8 @@
 # CITS4012 Assignment Specification - Wiki QA
 
 **Lecture XX** or **Lab XX** = Lecture/Lab Reference <br/>
-**(Justify your decision)** = You are required to justify your final decision/selection with the empirical evidence by testing the techniques in the section 3. Model Testing. <br/>
-**(Explain the performance)** = You are required to explain the trend of performance, and the reason (or your opinion) why the trends show as they do.<br/>
+**(Justify your decision)** = You are required to justify your final decision/selection with the empirical evidence by testing the techniques in the section 3. Model Testing. Must write in the report (Section 4. Documentation)<br/>
+**(Explain the performance)** = You are required to explain the trend of performance, and the reason (or your opinion) why the trends show as they do. Must write in the report (Section 4. Documentation)<br/>
 **Templates**: ipynb and documentation templates can be found in the Assignment Submission Method
 
 ## Submission Due: 20 May 2023
@@ -17,8 +17,8 @@ Note that we specified which lectures and labs are highly related!
 - [0. Important Dates (Very Important!!)](https://github.com/adlnlp/CITS4012_2023#0important-dates-and-schedule)
 - [1. DataSet](https://github.com/adlnlp/CITS4012_2023#-1-dataset-4-marks)
 - [2. QA Model Implementation](https://github.com/adlnlp/CITS4012_2023#2qa-model-implementation-10-marks)
-- [3. Model Testing](https://github.com/adlnlp/CITS4012_2023#3model-testing-10-marks)
-- [4. Documentation](https://github.com/adlnlp/CITS4012_2023#4documentation-6-marks)
+- [3. Model Testing](https://github.com/adlnlp/CITS4012_2023#3model-testing-9-marks)
+- [4. Documentation](https://github.com/adlnlp/CITS4012_2023#4documentation-7-marks)
 - [Assignment Submission Method](https://github.com/adlnlp/CITS4012_2023#assignment-submission-method)
 - [FAQ](https://github.com/adlnlp/CITS4012_2023#faq)
 
@@ -26,7 +26,7 @@ Note that we specified which lectures and labs are highly related!
 <br/>
 
 
-## <img src="https://em-content.zobj.net/thumbs/120/microsoft/319/calendar_1f4c5.png" width="30" />0.Important Dates and Schedule
+## <img src="https://em-content.zobj.net/thumbs/120/microsoft/319/calendar_1f4c5.png" width="30" />0.Important Dates
 The Important date for the Assignment can be summarised as follows:
 - **Assignment Specification Release**: 20 April 2023
 - **[Assignment Group EOI](https://forms.gle/Mf9Zv7za9rQ9j3Qd9) Due**: 23 April 2023
@@ -131,7 +131,9 @@ The following model testings should be conducted. For each testing, you MUST inc
 
 
 ## <img src="https://em-content.zobj.net/thumbs/120/facebook/355/page-facing-up_1f4c4.png" width="30" />4.Documentation [7 marks]
-You should submit pdf version of the assignment report (8 pages Maximum - excluding reference and appendix). The detailed documentation requirement for each section can be found above section 1. DataSet, 2. QA Model Implementation, and 3. Model Testing.
+You should submit pdf version of the assignment report (8 pages Maximum - excluding reference and appendix). The detailed documentation requirement for each section can be found above section 1. Dataset **(2 marks)**, 2. QA Model Implementation **(2 marks)**, and 3. Model Testing **(3 marks)**. **Please check the requirement items with the tag of (Justify your decision) or (Explain the performance). You MUST write those items to the report.**
+
+
 
 **The justification MUST be based on the previous literature reference (incl. international conference or journal publication) or empirical evaluation. (Check the definition of 'empirical evaluation' at the following FAQ Section). **
 
