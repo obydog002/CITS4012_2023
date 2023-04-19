@@ -124,7 +124,7 @@ You need to write a manual (readme) for the assessor. Your manual should guide h
 The following model testings should be conducted. For each testing, you MUST include and visualise the table/graph in the ipynb file (your code) and your documentation (section 4). Note that you MUST make the final model and conduct the ablation studies with that final model as follows:
 - **Input Embedding Ablation Study[3 marks]: (Explain the performance)** <br/> Test at least three types of input embedding variants (e.g. word2vec only, word2vec+POS tag embedding, word2vec+all 3 features embeddings) for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1) of all 3 variants. 
 - **Attention Ablation Study[3 marks]: (Explain the performance)** <br/> Test at least three types of attention variants (attention calculation variants or attention alignment variants) for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1) of all 3 variants.   
-- **Hyper Parameter Testing[3 marks]: (Explain the performance)** <br/> Test at least different 5 hyperparameter variants (5 different epoch values or 5 learning rates) for your model, and visualise a table/graph with the performance (exact value of precision, recall, and f1) of all 3 variants.
+- **Hyper Parameter Testing[3 marks]: (Explain the performance)** <br/> Test at least different 5 hyperparameter variants (5 different epoch values or 5 learning rates) for your model, and visualise a table/graph with the performance (exact value of precision, recall, and f1) of all 5 variants.
 
 
 <br/>
