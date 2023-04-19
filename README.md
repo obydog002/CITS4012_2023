@@ -184,5 +184,5 @@ Answer: The assignment specification is extremely detailed. The marking will be 
 **Question: What do I need to write in the justification or explanation? How much do I need to articulate?**<br/>
 Answer: We recommend conducting empirical evaluation. Empirical evaluation refers to the appraisal of a theory by observation in experiments. The key to good empirical evaluation is the proper design and execution of the experiments so that the particular factors to be tested can be easily separated from other confounding factors. Hence, visualizing the comparison of different testing results is a good way to justify your decision. Explain the trends based on your understanding. You can find another way (other than comparing different models) as well - like citing the peer-reviewed publications. 
 
-**Question: Can I use other Sequence Model(like Transformer)?**
+**Question: Can I use other Sequence Model(like Transformer)?**<br/>
 Answer: Yes, you can but please make sure all requirements in other sections should be successfully followed. For example, make sure you have all required dataset settings, input embeddings and model testings.
