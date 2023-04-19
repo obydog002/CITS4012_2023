@@ -1,5 +1,11 @@
 # CITS4012 Assignment Specification - Wiki QA
 
+**[XXX]** = Lecture/Lab Reference <br/>
+**(Justify your decision)** = You are required to justify your final decision/selection with the empirical evidence by testing the techniques in the section 3. Model Testing. <br/>
+**(Explain the performance)** = You are required to explain the trend of performance, and the reason (or your opinion) why the trends show as they do.
+
+## Submission Due: 20 May 2023
+
 This assignment can be done individually or in teams of two or three(max). We strongly encourage healthy collaboration. See the [University of Western Australia Working in Groups Guide](https://www.uwa.edu.au/students/-/media/Project/UWA/UWA/Students/Docs/STUDYSmarter/SS4-Working-in-Groups.pdf). If your team member does not engage or collaborate, please contact the unit coordinator ([Dr. Caren Han](mailto:caren.han@uwa.edu.au?subject=[CITS4012]%20Assignment%20Group)) with describing the contributions of each collaborator. We strongly recommend to start working early so that you will have ample time to discover stumbling blocks and ask questions.
 
 In this assignment, you are to propose and implement a Wikipedia QA (Question Answering) framework using the Sequence model and different NLP features. The QA framework should have the ability to read documents/texts and answer questions about them. The detailed information for the implementation and submission step are specified in the following sections. Note that lecture note and lab exercises would be a good starting point and baseline for the assignment.
