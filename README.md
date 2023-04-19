@@ -160,6 +160,7 @@ You should submit pdf version of the assignment report (8 pages Maximum - exclud
 - zip file: A zip file that contains trained models, dataset, readme - if necessary, and all other required files that you used for your program.
 (file name: cits4012_your_groupid.zip)
 
+<br/>
 
 ## <img src="https://em-content.zobj.net/thumbs/120/google/350/person-raising-hand_1f64b.png" width="30" />FAQ
 **Question: My Model performs really bad (Low F1). What did I do wrong?**<br/>
