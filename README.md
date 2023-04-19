@@ -58,7 +58,7 @@ In this assignment, you are asked to use Microsoft Research WikiQA Corpus. The W
 - **Download datasets**:
 You will be provided two datasets, including the [training dataset](https://drive.google.com/uc?id=1SXoGbD9WZHwhpqR-cBw7-8_7Ri06nIb6) and the [testing dataset](https://drive.google.com/uc?id=1TwuDSxlcAFDnTRpF-GRvqRXoR_UsJznH). Both datasets contain the following attributes: QuestionID, Question, DocumentID, DocumentTitle, SentenceID, Sentence, and Label (answer sentence, if label=1). If you want to explore or use the full dataset, you can download it via the [Link](https://www.microsoft.com/en-us/download/details.aspx?id=52419). However, the training and testing split should be followed by the one we provided.
 
-- **Data Wrangling**:
+- **Data Wrangling (Justify your decision)**:
 You need to first wrangle the dataset. As you can see in the following Figure 1, each row is based on each sentence of the document. You need to construct three different types of data for training the model: Question, Document and Answer. To construct the document data, you should concatenate (with space or full-stop and space) each sentence that has the same DocumentID. For the answer data, use the sentence that has Label as 1.
 
 Note: 1) Some questions may not have answers. (All labels are 0) 2) Some documents may have multiple questions.
@@ -83,11 +83,11 @@ You are to propose and implement the open-ended QA framework using word embeddin
 <br/>
 You are asked to generate the word vector by using the word embedding model and different types of features. For example, in Figure 2, the word ‘Perito’ is converted to the vector [word2vec, PER, 9, NNP, …].  
 
-- **Word embedding** - refer to [Lab2](https://colab.research.google.com/drive/1KY63ItqLQshnM3CuF46Hxl4fq2_4k3en?usp=sharing), [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing). 
+- **Word embedding (Justify your decision)** - refer to [Lab2](https://colab.research.google.com/drive/1KY63ItqLQshnM3CuF46Hxl4fq2_4k3en?usp=sharing), [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing). 
 You are to apply a pre-trained word embedding model, including word2vec CBOW or skip-gram, fastText, or gloVe. For example, you can find various types of pre-trained word embedding models from the following link:
 [https://github.com/RaRe-Technologies/gensim-data#datasets](https://github.com/RaRe-Technologies/gensim-data#datasets)
 
-- **Feature extraction**
+- **Feature extraction (Justify your decision)**
 Different types of features should be extracted in order to improve the performance and evaluate different combinations of model specification (will discuss more in the 4. Documentation section - Evaluation).  You are asked to extract at least **three types** of features from the following list:
 1) *PoS Tags  -refer to [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing)
 2) *TF-IDF -refer to [Lab1](https://colab.research.google.com/drive/1w3vj8xzRzeHzZibCRxpNddgsbUCwf6T-?usp=sharing)
@@ -103,9 +103,9 @@ In this QA framework, you are to implement a sequence model using RNN  (such as 
 
 Figure 2 describes the Bi-LSTM-based model as an example.  As can be seen in Figure 2, your sequence model should have two input layers (one for the Question and another for Document) and one output layer (Answer). The output layer should predict the answer (start token and end token). Also, your sequence model is required to include an attention layer to get better performance (which needs to be presented in your architecture). The positions to add the Attention layer are recommended in the blue box (top-right) of Figure 2.
 
-For the sequence model, you can use single or multiple layers but you should provide the optimal number of layers. 
+For the sequence model, you can use single or multiple layers but you should provide the optimal number of layers.**(Justify your decision)** 
 
-The detailed architecture of your sequence model needs to be drawn and described in the report (refer to section 4 - Documentation). You need to justify (in the report) why you apply the specific type of RNN and put the attention layer in the specific position. 
+The detailed architecture of your sequence model needs to be drawn and described in the report (refer to section 4 - Documentation). You need to justify (in the report) why you apply the specific type of RNN and put the attention layer in the specific position. **(Justify your decision)** 
 
 The final trained model should be submitted in your Python package. 
 
@@ -122,9 +122,9 @@ You need to justify your decision and explain the pattern by testing the perform
 You need to write a manual (readme) for the assessor. Your manual should guide how to test your program and also includes a list of packages (with version) that you used. If you work on Google Colab or Jupyter Notebook (.ipynb), your manual should guide the assessor on where to upload the required files (trained model, dataset, etc.). Note the assessor will use Google Colab to open your ipynb file. Unless you have a function that downloads required files from URL or Google Drive. 
 
 The following model testings should be conducted. For each testing, you MUST include and visualise the table/graph in the ipynb file (your code) and your documentation (section 4). Note that you MUST make the final model and conduct the ablation studies with that final model as follows:
-**- Input Embedding Ablation Study[3 marks]:** <br/> Test at least three types of input embedding variants (e.g. word2vec only, word2vec+POS tag embedding, word2vec+all 3 features embeddings) for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1) of all 3 variants. 
-**- Attention Ablation Study[3 marks]:** <br/> Test at least three types of attention variants (attention calculation variants or attention alignment variants) for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1) of all 3 variants.   
-**- Hyper Parameter Testing[3 marks]:** <br/> Test at least different 5 hyperparameter variants (5 different epoch values or 5 learning rates) for your model, and visualise a table/graph with the performance (exact value of precision, recall, and f1) of all 3 variants.
+**- Input Embedding Ablation Study[3 marks]: **(Explain the performance)** ** <br/> Test at least three types of input embedding variants (e.g. word2vec only, word2vec+POS tag embedding, word2vec+all 3 features embeddings) for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1) of all 3 variants. 
+**- Attention Ablation Study[3 marks]: **(Explain the performance)** ** <br/> Test at least three types of attention variants (attention calculation variants or attention alignment variants) for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1) of all 3 variants.   
+**- Hyper Parameter Testing[3 marks]: **(Explain the performance)** ** <br/> Test at least different 5 hyperparameter variants (5 different epoch values or 5 learning rates) for your model, and visualise a table/graph with the performance (exact value of precision, recall, and f1) of all 3 variants.
 
 
 <br/>
@@ -133,9 +133,9 @@ The following model testings should be conducted. For each testing, you MUST inc
 ## <img src="https://em-content.zobj.net/thumbs/120/facebook/355/page-facing-up_1f4c4.png" width="30" />4.Documentation [7 marks]
 You should submit pdf version of the assignment report (8 pages Maximum - excluding reference and appendix). The detailed documentation requirement for each section can be found above section 1. DataSet, 2. QA Model Implementation, and 3. Model Testing.
 
-**NOTE:
-The justification MUST be based on the previous literature reference (incl. international conference or journal publication) or empirical evaluation. (Check the definition of 'empirical evaluation' at the following FAQ Section). 
-We DO NOT MARK the Documentation if it is not implemented as described in the report.**
+**The justification MUST be based on the previous literature reference (incl. international conference or journal publication) or empirical evaluation. (Check the definition of 'empirical evaluation' at the following FAQ Section). **
+
+**Note that We DO NOT MARK the Documentation if it is not implemented as described in the report.**
 
 
 
