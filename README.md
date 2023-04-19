@@ -8,15 +8,6 @@ In this assignment, you are to propose and implement a Wikipedia QA (Question An
 Note that we specified which lectures and labs are highly related!
 
 
-**Table of Contents**
-- 0. [Important Dates and Schedule (Very Important!!)](https://github.com/adlnlp/CITS4012_2023/edit/main/README.md#0important-dates-and-schedule)
-- 1. 
-- 
-- 
-
-
-
-
 
 ## <img src="https://em-content.zobj.net/thumbs/120/microsoft/319/calendar_1f4c5.png" width="30" />0.Important Dates and Schedule
 The Important date for the Assignment can be summarised as follows:
