@@ -179,7 +179,7 @@ Answer: You can either use it as a categorial embedding (e.g. putting the POS ta
 Answer: We highly recommend you to save your best word embedding model, and load it when you use it in your code. Otherwise, it is sometimes removed and overwrite all your code so that you need to re-run the whole code again.
 
 **Question: Is there any other marking scheme/marking criteria available for the assignment?**<br/>
-Answer: The assignment specification is extremely detailed. The marking will be directly conducted based on the specification. It means you will get the full mark if you fulfill all the requirement that we mentioned in the specification.
+Answer: The assignment specification is extremely detailed and the partial mark details are already given. The marking will be directly conducted based on the specification. It means you will get the full mark if you fulfill all the requirement that we mentioned in the specification.
 
 **Question: What do I need to write in the justification or explanation? How much do I need to articulate?**<br/>
 Answer: We recommend conducting empirical evaluation. Empirical evaluation refers to the appraisal of a theory by observation in experiments. The key to good empirical evaluation is the proper design and execution of the experiments so that the particular factors to be tested can be easily separated from other confounding factors. Hence, visualizing the comparison of different testing results is a good way to justify your decision. Explain the trends based on your understanding. You can find another way (other than comparing different models) as well - like citing the peer-reviewed publications. 
