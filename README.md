@@ -98,7 +98,7 @@ Different types of features should be extracted in order to improve the performa
 
 
 **2) Sequence QA Model (Recurrent Model with Attention) [5 marks]**
--refer to Lecture 7, [Lab7(Will be released by 24/04/2023 9AM)], [Lab4 -RNN/Bi-RNN](https://colab.research.google.com/drive/1WvRFQX_j-cg3prcGZb7zC_85c2wG64Uc?usp=sharing), [Lab6 - Bi-LSTM](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing)
+-refer to Lecture 7, [Lab7(Will be released on 24 April 2023 9AM)], [Lab4 -RNN/Bi-RNN](https://colab.research.google.com/drive/1WvRFQX_j-cg3prcGZb7zC_85c2wG64Uc?usp=sharing), [Lab6 - Bi-LSTM](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing)
 In this QA framework, you are to implement a sequence model using RNN  (such as RNN, LSTM, Bi-LSTM, GRU, Bi-GRU, etc.) with attention. 
 
 Figure 2 describes the Bi-LSTM-based model as an example.  As can be seen in Figure 2, your sequence model should have two input layers (one for the Question and another for Document) and one output layer (Answer). The output layer should predict the answer (start token and end token). Also, your sequence model is required to include an attention layer to get better performance (which needs to be presented in your architecture). The positions to add the Attention layer are recommended in the blue box (top-right) of Figure 2.
