@@ -1,6 +1,6 @@
 # CITS4012 Assignment Specification - Wiki QA
 
-**[XXX]** = Lecture/Lab Reference <br/>
+**Lecture XX** or **Lab XX** = Lecture/Lab Reference <br/>
 **(Justify your decision)** = You are required to justify your final decision/selection with the empirical evidence by testing the techniques in the section 3. Model Testing. <br/>
 **(Explain the performance)** = You are required to explain the trend of performance, and the reason (or your opinion) why the trends show as they do.<br/>
 **Templates**: ipynb and documentation templates can be found in the Assignment Submission Method
