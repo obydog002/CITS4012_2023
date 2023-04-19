@@ -70,6 +70,8 @@ Note: 1) Some questions may not have answers. (All labels are 0) 2) Some documen
 
 
 ## <img src="https://em-content.zobj.net/thumbs/120/whatsapp/326/desktop-computer_1f5a5-fe0f.png" width="30" />2.QA Model Implementation [10 marks]
+| :exclamation:  You need to put the code that you conduct all actions for this section 1. Dataset to the [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing) |
+|-----------------------------------------|
 You are to propose and implement the open-ended QA framework using word embedding, different types of feature combinations, and deep learning models. The following architecture describes an overview of QA framework architecture. (Click [This Link](https://github.com/adlnlp/CITS4012_2023/blob/main/assignment_overview.png) to view the high-resolution image.)
 
 <img src="https://github.com/adlnlp/CITS4012_2023/blob/main/assignment_overview.png" width="80%"><p align="center">**Figure 2. Overview of the Architecture of the WikiQA**</p>
@@ -109,6 +111,9 @@ The final trained model should be submitted in your Python package.
 
 
 ## <img src="https://em-content.zobj.net/source/skype/289/test-tube_1f9ea.png" width="30" />3.Model Testing [10 marks]
+| :exclamation:  You need to put the code that you conduct all actions for this section 1. Dataset to the [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing) |
+|-----------------------------------------|
+
 You are to implement a testing program with the trained model. When the testing program is executed, the program should show the testing result with different combinations of model specifications (different features that you used in section 2.1). The testing result should include precision, recall and F-value -refer to [Lab4(Exercise)].
 
 You need to write a manual (readme) for the assessor. Your manual should guide how to test your program and also includes a list of packages (with version) that you used. If you work on Google Colab or Jupyter Notebook (.ipynb), your manual should guide the assessor on where to upload the required files (trained model, dataset, etc.). Note the assessor will use Google Colab to open your ipynb file. Unless you have a function that downloads required files from URL or Google Drive. 
