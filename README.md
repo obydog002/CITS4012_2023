@@ -61,7 +61,7 @@ You will be provided two datasets, including the [training dataset](https://driv
 - **Data Wrangling (Justify your decision)**:
 You need to first wrangle the dataset. As you can see in the following Figure 1, each row is based on each sentence of the document. You need to construct three different types of data for training the model: Question, Document and Answer. To construct the document data, you should concatenate (with space or full-stop and space) each sentence that has the same DocumentID. For the answer data, use the sentence that has Label as 1. 
 
-For example, you can label each token of the document into three token types (Start Token of the Answer, End Token of the Answer, and None).   
+For example, you can label each token of the document into three token types (Start Token of the Answer, End Token of the Answer, and None) or four token types (Start Token of the Answer, Inner Token of the Answer, End Token of the Answer, and None).   
 Please check how we have the dataset for N-to-N Task in [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing). 
 
 
