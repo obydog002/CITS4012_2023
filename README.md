@@ -3,6 +3,7 @@
 **[XXX]** = Lecture/Lab Reference <br/>
 **(Justify your decision)** = You are required to justify your final decision/selection with the empirical evidence by testing the techniques in the section 3. Model Testing. <br/>
 **(Explain the performance)** = You are required to explain the trend of performance, and the reason (or your opinion) why the trends show as they do.
+**Templates**: ipynb and documentation templates can be found in the Assignment Submission Method
 
 ## Submission Due: 20 May 2023
 
@@ -144,7 +145,7 @@ We do not mark the section (or all assignment) if it is not implemented as descr
 **You Must Submit Three Files:**
 - pdf file: a report (documentation) with the given template
 (file name: cits4012_your_groupid.pdf)
-- ipynb file or python packages (.py files): An ipynb file or python package that includes all your implementation (the implementation is described in the following sections - dataset, NER model, and testing-leaderboard)
+- ipynb file or python packages (.py files): An ipynb file or python package that includes all your implementation (the implementation is described in the following sections - dataset, NER model, and testing-leaderboard). You MUST use this [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing)
 (file name: cits4012_your_groupid.ipynb)
 - zip file: A zip file that contains trained models, dataset, readme - if necessary, and all other required files that you used for your program.
 (file name: cits4012_your_groupid.zip)
