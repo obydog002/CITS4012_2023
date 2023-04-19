@@ -49,7 +49,7 @@ Otherwise, your group members will be selected by our teaching team.
 <br/>
 
 ## <img src="https://em-content.zobj.net/thumbs/120/samsung/349/card-file-box_1f5c3-fe0f.png" width="30" /> 1. DataSet [4 marks]
-| :exclamation:  You need to put the code that you conduct all actions for this section 1. Dataset to the [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing) |
+| :exclamation:  You need to put the code that you conduct all actions for this section to the [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing) |
 |-----------------------------------------|
 
 
@@ -71,8 +71,10 @@ Note: 1) Some questions may not have answers. (All labels are 0) 2) Some documen
 
 
 ## <img src="https://em-content.zobj.net/thumbs/120/whatsapp/326/desktop-computer_1f5a5-fe0f.png" width="30" />2.QA Model Implementation [10 marks]
-| :exclamation:  You need to put the code that you conduct all actions for this section 1. Dataset to the [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing) |
+
+| :exclamation:  You need to put the code that you conduct all actions for this section to the [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing) |
 |-----------------------------------------|
+
 You are to propose and implement the open-ended QA framework using word embedding, different types of feature combinations, and deep learning models. The following architecture describes an overview of QA framework architecture. (Click [This Link](https://github.com/adlnlp/CITS4012_2023/blob/main/assignment_overview.png) to view the high-resolution image.)
 
 <img src="https://github.com/adlnlp/CITS4012_2023/blob/main/assignment_overview.png" width="80%"><p align="center">**Figure 2. Overview of the Architecture of the WikiQA**</p>
@@ -112,14 +114,17 @@ The final trained model should be submitted in your Python package.
 
 
 ## <img src="https://em-content.zobj.net/source/skype/289/test-tube_1f9ea.png" width="30" />3.Model Testing [10 marks]
-| :exclamation:  You need to put the code that you conduct all actions for this section 1. Dataset to the [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing) |
+| :exclamation:  You need to put the code that you conduct all actions for this section to the [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing) |
 |-----------------------------------------|
 
-You are to implement a testing program with the trained model. When the testing program is executed, the program should show the testing result with different combinations of model specifications (different features that you used in section 2.1). The testing result should include precision, recall and F-value -refer to [Lab4(Exercise)].
+You need to justify your decision and explain the pattern by testing the performance of your implementation. The testing result should include precision, recall and F-value -refer to [Lab4(Exercise)](https://colab.research.google.com/drive/1WvRFQX_j-cg3prcGZb7zC_85c2wG64Uc?usp=sharing).
 
 You need to write a manual (readme) for the assessor. Your manual should guide how to test your program and also includes a list of packages (with version) that you used. If you work on Google Colab or Jupyter Notebook (.ipynb), your manual should guide the assessor on where to upload the required files (trained model, dataset, etc.). Note the assessor will use Google Colab to open your ipynb file. Unless you have a function that downloads required files from URL or Google Drive. 
 
-The testing result and discussion should be described in the report  (refer to section 4 - Documentation).
+The following model testings should be conducted. For each testing, you MUST include and visualise the table/graph in the ipynb file (your code) and your documentation (section 4):
+**- Input Embedding Ablation Study:** <br/> Test at least three types of input embedding variants for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1).  
+**- Attention Ablation Study:** <br/> Test at least three types of attention variants (attention calculation variants, attention alignment variants) for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1).  
+**- Hyper Parameter Testing:** <br/> Test at least hyperparameter (epochs or learning rate) for your model, and visualise a table/graph with the performance (exact value of precision, recall, and f1)
 
 
 <br/>
