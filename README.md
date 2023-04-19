@@ -101,7 +101,7 @@ Different types of features should be extracted in order to improve the performa
 -refer to Lecture 7, [Lab7(Will be released on 24 April 2023 9AM)], [Lab4 -RNN/Bi-RNN](https://colab.research.google.com/drive/1WvRFQX_j-cg3prcGZb7zC_85c2wG64Uc?usp=sharing), [Lab6 - Bi-LSTM](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing)<br/>
 In this QA framework, you are to implement a sequence model using RNN  (such as RNN, LSTM, Bi-LSTM, GRU, Bi-GRU, etc.) with attention. 
 
-Figure 2 describes the Bi-LSTM-based model as an example.  As can be seen in Figure 2, your sequence model should have two input layers (one for the Question and another for Document) and one output layer (Answer). The output layer should predict the answer (start token and end token). Also, your sequence model is required to include an attention layer to get better performance (which needs to be presented in your architecture). The positions to add the Attention layer are recommended in the blue box (top-right) of Figure 2.
+Figure 2 describes the Bi-LSTM-based model as an example.  As can be seen in Figure 2, your sequence model should have two input layers (one for the Question and another for Document) and one output layer (Answer). The output layer should predict the answer (either using sentence classification style  or start token/end token). Also, your sequence model is required to include an attention layer to get better performance (which needs to be presented in your architecture). The positions to add the Attention layer are recommended in the blue box (top-right) of Figure 2.
 
 For the sequence model, you can use single or multiple layers but you should provide the optimal number of layers.**(Justify your decision)** 
 
