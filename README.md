@@ -59,9 +59,15 @@ In this assignment, you are asked to use Microsoft Research WikiQA Corpus. The W
 You will be provided two datasets, including the [training dataset](https://drive.google.com/uc?id=1SXoGbD9WZHwhpqR-cBw7-8_7Ri06nIb6) and the [testing dataset](https://drive.google.com/uc?id=1TwuDSxlcAFDnTRpF-GRvqRXoR_UsJznH). Both datasets contain the following attributes: QuestionID, Question, DocumentID, DocumentTitle, SentenceID, Sentence, and Label (answer sentence, if label=1). If you want to explore or use the full dataset, you can download it via the [Link](https://www.microsoft.com/en-us/download/details.aspx?id=52419). However, the training and testing split should be followed by the one we provided.
 
 - **Data Wrangling (Justify your decision)**:
-You need to first wrangle the dataset. As you can see in the following Figure 1, each row is based on each sentence of the document. You need to construct three different types of data for training the model: Question, Document and Answer. To construct the document data, you should concatenate (with space or full-stop and space) each sentence that has the same DocumentID. For the answer data, use the sentence that has Label as 1.
+You need to first wrangle the dataset. As you can see in the following Figure 1, each row is based on each sentence of the document. You need to construct three different types of data for training the model: Question, Document and Answer. To construct the document data, you should concatenate (with space or full-stop and space) each sentence that has the same DocumentID. For the answer data, use the sentence that has Label as 1. 
+
+For example, you can label each token of the document into three token types (Start Token of the Answer, End Token of the Answer, and None).   
+Please check how we have the dataset for N-to-N Task in [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing). 
+
 
 Note: 1) Some questions may not have answers. (All labels are 0) 2) Some documents may have multiple questions.
+
+
 
 <img src="https://github.com/adlnlp/CITS4012_2023/blob/main/Assi_figure1.PNG" width="80%"><p align="center">**Figure 1. WikiQA: Raw Data - Sample View**</p>
 
