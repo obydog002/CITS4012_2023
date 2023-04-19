@@ -152,7 +152,7 @@ You should submit pdf version of the assignment report (8 pages Maximum - exclud
 **You Must Submit Three Files:**
 - pdf file: a report (documentation) with the given template
 (file name: cits4012_your_groupid.pdf)
-- ipynb file or python packages (.py files): An ipynb file or python package that includes all your implementation (the implementation is described in the following sections - dataset, NER model, and testing-leaderboard). You MUST use this [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing)
+- ipynb file or python packages (.py files): An ipynb file or python package that includes all your implementation (the implementation is described in the following sections - dataset, qa model, model testing). You MUST use this [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing)
 (file name: cits4012_your_groupid.ipynb)
 - zip file: A zip file that contains trained models, dataset, readme - if necessary, and all other required files that you used for your program.
 (file name: cits4012_your_groupid.zip)
