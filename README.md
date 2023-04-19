@@ -3,7 +3,7 @@
 **Lecture XX** or **Lab XX** = Lecture/Lab Reference <br/>
 **(Justify your decision)** = You are required to justify your final decision/selection with the empirical evidence by testing the techniques in the section 3. Model Testing. Must write in the report (Section 4. Documentation)<br/>
 **(Explain the performance)** = You are required to explain the trend of performance, and the reason (or your opinion) why the trends show as they do. Must write in the report (Section 4. Documentation)<br/>
-**Templates**: ipynb and documentation templates can be found in the Assignment Submission Method
+**Templates**: ipynb template and documentation template can be found in the Assignment Submission Method
 
 ## Submission Due: 20 May 2023
 
@@ -150,7 +150,7 @@ You should submit pdf version of the assignment report (8 pages Maximum - exclud
 **Submission:** LMS Assignment Submission Box (The submission box will be opened on 1 May 2023)
 
 **You Must Submit Three Files:**
-- pdf file: a report (documentation) with the given template
+- pdf file: a report (documentation) with the given template ([overleaf](https://www.overleaf.com/read/wpjzvgkcjkwp) or [word](https://github.com/adlnlp/CITS4012_2023/blob/main/assign_report.docx))
 (file name: cits4012_your_groupid.pdf)
 - ipynb file or python packages (.py files): An ipynb file or python package that includes all your implementation (the implementation is described in the following sections - dataset, qa model, model testing). You MUST use this [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing)
 (file name: cits4012_your_groupid.ipynb)
