@@ -131,6 +131,9 @@ The following model testings should be conducted. For each testing, you MUST inc
 
 
 ## <img src="https://em-content.zobj.net/thumbs/120/facebook/355/page-facing-up_1f4c4.png" width="30" />4.Documentation [7 marks]
+| :exclamation:  Please use the provided documentation template ([overleaf](https://www.overleaf.com/read/wpjzvgkcjkwp) or [word](https://github.com/adlnlp/CITS4012_2023/blob/main/assign_report.docx))|
+|-----------------------------------------|
+
 You should submit pdf version of the assignment report (8 pages Maximum - excluding reference and appendix). The detailed documentation requirement for each section can be found above section 1. Dataset **(2 marks)**, 2. QA Model Implementation **(2 marks)**, and 3. Model Testing **(3 marks)**. **Please check the requirement items with the tag of (Justify your decision) or (Explain the performance). You MUST write those items to the report.**
 
 
