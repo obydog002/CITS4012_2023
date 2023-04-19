@@ -7,6 +7,15 @@ In this assignment, you are to propose and implement a Wikipedia QA (Question An
 
 Note that we specified which lectures and labs are highly related!
 
+**Table of Contents**
+- [Important Dates and Schedule (Very Important!!)](https://github.com/adlnlp/CITS4012_2023#0important-dates-and-schedule)
+- [DataSet](https://github.com/adlnlp/CITS4012_2023#-1-dataset-compulsory)
+- [Important Dates and Schedule (Very Important!!)](https://github.com/adlnlp/CITS4012_2023#0important-dates-and-schedule)
+- [Important Dates and Schedule (Very Important!!)](https://github.com/adlnlp/CITS4012_2023#0important-dates-and-schedule)
+- [Important Dates and Schedule (Very Important!!)](https://github.com/adlnlp/CITS4012_2023#0important-dates-and-schedule)
+
+
+
 
 
 ## <img src="https://em-content.zobj.net/thumbs/120/microsoft/319/calendar_1f4c5.png" width="30" />0.Important Dates and Schedule
@@ -29,7 +38,7 @@ Otherwise, your group members will be selected by our teaching team.
 
 
 
-## <img src="https://em-content.zobj.net/thumbs/120/samsung/349/card-file-box_1f5c3-fe0f.png" width="30" /> 1. DataSet [Compulsory]
+## <img src="https://em-content.zobj.net/thumbs/120/samsung/349/card-file-box_1f5c3-fe0f.png" width="30" /> 1. DataSet [4 marks]
 In this assignment, you are asked to use Microsoft Research WikiQA Corpus. The WikiQA corpus includes a set of question and sentence pairs, which is collected and annotated for research on open-domain question answering. The question sources were derived from Bing query logs, and each question is linked to a Wikipedia page that potentially has the answer. More detail on this data can be found in the paper, [WikiQA: A Challenge Dataset for Open-Domain Question Answering](https://aclweb.org/anthology/D15-1237). 
 
 - **Download datasets**:
