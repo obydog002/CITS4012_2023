@@ -10,7 +10,7 @@ Note that we specified which lectures and labs are highly related!
 
 **Table of Contents**
 - 0. [Important Dates and Schedule (Very Important!!)](https://github.com/adlnlp/CITS4012_2023/edit/main/README.md#0important-dates-and-schedule)
-- 
+- 1. 
 - 
 - 
 
