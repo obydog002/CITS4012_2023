@@ -54,16 +54,17 @@ You are to propose and implement the open-ended QA framework using word embeddin
 <br/>
 You are asked to generate the word vector by using the word embedding model and different types of features. For example, in Figure 2, the word ‘Perito’ is converted to the vector [word2vec, PER, 9, NNP, …].  
 
-1.Word embedding - refer to [Lab2](https://colab.research.google.com/drive/1KY63ItqLQshnM3CuF46Hxl4fq2_4k3en?usp=sharing), [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing). 
+- Word embedding - refer to [Lab2](https://colab.research.google.com/drive/1KY63ItqLQshnM3CuF46Hxl4fq2_4k3en?usp=sharing), [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing). 
 You are to apply a pre-trained word embedding model, including word2vec CBOW or skip-gram, fastText, or gloVe. For example, you can find various types of pre-trained word embedding models from the following link:
 [https://github.com/RaRe-Technologies/gensim-data#datasets](https://github.com/RaRe-Technologies/gensim-data#datasets)
 
-2.Feature extraction
-Different types of features should be extracted in order to improve the performance and evaluate different combinations of model specification (will discuss more in the Documentation section - Evaluation).  You are asked to extract at least three types of features from the following list:
-- PoS Tags  -refer to [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing)
-- TF-IDF -refer to [Lab1](https://colab.research.google.com/drive/1w3vj8xzRzeHzZibCRxpNddgsbUCwf6T-?usp=sharing)
-- Named Entity Tags -refer to [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing)
-- Word Match Feature: check whether the word appears in the question by using decapitalisation or lemmatization  -refer to Lecture 5 and [Lab5](https://colab.research.google.com/drive/1euiRIkQAaJS7Vjd5PRFxJHZw3aHn5d1K?usp=sharing)
+- Feature extraction
+Different types of features should be extracted in order to improve the performance and evaluate different combinations of model specification (will discuss more in the 4. Documentation section - Evaluation).  You are asked to extract at least three types of features from the following list:
+1) PoS Tags  -refer to [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing)
+2) TF-IDF -refer to [Lab1](https://colab.research.google.com/drive/1w3vj8xzRzeHzZibCRxpNddgsbUCwf6T-?usp=sharing)
+3) Named Entity Tags -refer to [Lab6](https://colab.research.google.com/drive/1aJB7LMVftUCDaN1OMIat6YyRvdTMgJf_?usp=sharing)
+4) Word Match Feature: check whether the word appears in the question by using decapitalisation or lemmatization  -refer to Lecture 5 and [Lab5](https://colab.research.google.com/drive/1euiRIkQAaJS7Vjd5PRFxJHZw3aHn5d1K?usp=sharing)
+5) Others: Any one embedding type can be included if you have a logical reason why it requires to the wiki QA. 
 
 
 
@@ -75,10 +76,23 @@ Figure 2 describes the Bi-LSTM-based model as an example.  As can be seen in Fig
 
 For the sequence model, you can use single or multiple layers but you should provide the optimal number of layers. 
 
-The detailed architecture of your sequence model needs to be drawn and described in the report (refer to section 3 - Documentation). You need to justify (in the report) why you apply the specific type of RNN and put the attention layer in the specific position. 
+The detailed architecture of your sequence model needs to be drawn and described in the report (refer to section 4 - Documentation). You need to justify (in the report) why you apply the specific type of RNN and put the attention layer in the specific position. 
 
 The final trained model should be submitted in your Python package. 
 
 
 ## <img src="https://em-content.zobj.net/source/skype/289/test-tube_1f9ea.png" width="30" />3.Model Testing [10 marks]
+You are to implement a testing program with the trained model. When the testing program is executed, the program should show the testing result with different combinations of model specifications (different features that you used in section 2.1). The testing result should include precision, recall and F-value -refer to [Lab4(Exercise)].
 
+You need to write a manual (readme) for the assessor. Your manual should guide how to test your program and also includes a list of packages (with version) that you used. If you work on Google Colab or Jupyter Notebook (.ipynb), your manual should guide the assessor on where to upload the required files (trained model, dataset, etc.). Note the assessor will use Google Colab to open your ipynb file. Unless you have a function that downloads required files from URL or Google Drive. 
+
+The testing result and discussion should be described in the report  (refer to section 4 - Documentation).
+
+
+
+
+
+
+
+## FAQ
+- How can we make POS Tag or NER Tag to the embedding? 
