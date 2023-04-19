@@ -91,8 +91,11 @@ The testing result and discussion should be described in the report  (refer to s
 
 
 
+## <img src="https://em-content.zobj.net/thumbs/120/facebook/355/page-facing-up_1f4c4.png" width="30" />4.Documentation [6 marks]
 
 
 
-## FAQ
+
+
+## <img src="https://em-content.zobj.net/thumbs/120/google/350/person-raising-hand_1f64b.png" width="30" />FAQ
 - How can we make POS Tag or NER Tag to the embedding? 
