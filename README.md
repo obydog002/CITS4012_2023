@@ -113,7 +113,7 @@ The final trained model should be submitted in your Python package.
 <br/>
 
 
-## <img src="https://em-content.zobj.net/source/skype/289/test-tube_1f9ea.png" width="30" />3.Model Testing [10 marks]
+## <img src="https://em-content.zobj.net/source/skype/289/test-tube_1f9ea.png" width="30" />3.Model Testing [9 marks]
 | :exclamation:  You need to put the code that you conduct all actions for this section to the [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing) |
 |-----------------------------------------|
 
@@ -121,21 +121,21 @@ You need to justify your decision and explain the pattern by testing the perform
 
 You need to write a manual (readme) for the assessor. Your manual should guide how to test your program and also includes a list of packages (with version) that you used. If you work on Google Colab or Jupyter Notebook (.ipynb), your manual should guide the assessor on where to upload the required files (trained model, dataset, etc.). Note the assessor will use Google Colab to open your ipynb file. Unless you have a function that downloads required files from URL or Google Drive. 
 
-The following model testings should be conducted. For each testing, you MUST include and visualise the table/graph in the ipynb file (your code) and your documentation (section 4):
-**- Input Embedding Ablation Study:** <br/> Test at least three types of input embedding variants for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1).  
-**- Attention Ablation Study:** <br/> Test at least three types of attention variants (attention calculation variants, attention alignment variants) for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1).  
-**- Hyper Parameter Testing:** <br/> Test at least hyperparameter (epochs or learning rate) for your model, and visualise a table/graph with the performance (exact value of precision, recall, and f1)
+The following model testings should be conducted. For each testing, you MUST include and visualise the table/graph in the ipynb file (your code) and your documentation (section 4). Note that you MUST make the final model and conduct the ablation studies with that final model as follows:
+**- Input Embedding Ablation Study[3 marks]:** <br/> Test at least three types of input embedding variants (e.g. word2vec only, word2vec+POS tag embedding, word2vec+all 3 features embeddings) for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1) of all 3 variants. 
+**- Attention Ablation Study[3 marks]:** <br/> Test at least three types of attention variants (attention calculation variants or attention alignment variants) for your model, and visualise a table/graph with the peformance (exact value of precision, recall, and f1) of all 3 variants.   
+**- Hyper Parameter Testing[3 marks]:** <br/> Test at least different 5 hyperparameter variants (5 different epoch values or 5 learning rates) for your model, and visualise a table/graph with the performance (exact value of precision, recall, and f1) of all 3 variants.
 
 
 <br/>
 
 
-## <img src="https://em-content.zobj.net/thumbs/120/facebook/355/page-facing-up_1f4c4.png" width="30" />4.Documentation [6 marks]
+## <img src="https://em-content.zobj.net/thumbs/120/facebook/355/page-facing-up_1f4c4.png" width="30" />4.Documentation [7 marks]
 You should submit pdf version of the assignment report (8 pages Maximum - excluding reference and appendix). The detailed documentation requirement for each section can be found above section 1. DataSet, 2. QA Model Implementation, and 3. Model Testing.
 
 **NOTE:
-The justification MUST be based on the previous literature reference (incl. international conference or journal publication) or empirical evaluation. (Check the definition  empiritcal evaluation 
-We do not mark the section (or all assignment) if it is not implemented as described in the report.**
+The justification MUST be based on the previous literature reference (incl. international conference or journal publication) or empirical evaluation. (Check the definition of 'empirical evaluation' at the following FAQ Section). 
+We DO NOT MARK the Documentation if it is not implemented as described in the report.**
 
 
 
