@@ -27,13 +27,13 @@ Note that we specified which lectures and labs are highly related!
 
 ## <img src="https://em-content.zobj.net/thumbs/120/microsoft/319/calendar_1f4c5.png" width="30" />0.Important Dates and Schedule
 The Important date for the Assignment can be summarised as follows:
-- Assignment Specification Release: 20 April 2023
-- Assignment Group EOI Due: 23 April 2023
-- Assignment Group Release: 24 April 2023
-- Assignment Group Revision Due: 26 April 2023
-- Assignment Submission Due: 20 May 2023
+- **Assignment Specification Release**: 20 April 2023
+- **Assignment Group EOI Due**: 23 April 2023
+- **Assignment Group Release**: 24 April 2023
+- **Assignment Group Revision Due**: 26 April 2023
+- **Assignment Submission Due**: 20 May 2023
 
-All deadlines are 11:59 PM (AWST).
+All deadlines are **11:59 PM (AWST)**.
 
 NOTE: 
 **If you want to do individual or already have group members in mind**, Please Submit Group EOI by EOI Due (23 April 2023 11:59PM)
@@ -48,6 +48,10 @@ Otherwise, your group members will be selected by our teaching team.
 <br/>
 
 ## <img src="https://em-content.zobj.net/thumbs/120/samsung/349/card-file-box_1f5c3-fe0f.png" width="30" /> 1. DataSet [4 marks]
+| :exclamation:  You need to put the code that you conduct all actions for this section 1. Dataset to the [ipynb template](https://colab.research.google.com/drive/1flkFWGcD1S84HONhTGodsEudyPZjsJ75?usp=sharing) |
+|-----------------------------------------|
+
+
 In this assignment, you are asked to use Microsoft Research WikiQA Corpus. The WikiQA corpus includes a set of question and sentence pairs, which is collected and annotated for research on open-domain question answering. The question sources were derived from Bing query logs, and each question is linked to a Wikipedia page that potentially has the answer. More detail on this data can be found in the paper, [WikiQA: A Challenge Dataset for Open-Domain Question Answering](https://aclweb.org/anthology/D15-1237). 
 
 - **Download datasets**:
