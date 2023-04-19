@@ -135,16 +135,17 @@ We do not mark the section (or all assignment) if it is not implemented as descr
 
 
 ## <img src="https://em-content.zobj.net/thumbs/120/google/350/person-raising-hand_1f64b.png" width="30" />FAQ
-- How can we make POS Tag or NER Tag to the embedding? 
-
-**Question: My Model performs really bad (Low F1). What did I do wrong?**
+**Question: My Model performs really bad (Low F1). What did I do wrong?**<br/>
 Answer: Please don't worry about the low performance as our training dataset is very small and your model is very basic deep learning model. Of course, there is something wrong with your code if it comes out below 10% (0.1).
 
-**Question: Do I need to save the word embedding model or Recurrent models?**
+**Question: How can we make POS Tag or NER Tag to the embedding?**<br/>
+Answer: You can either use it as a categorial embedding (e.g. putting the POS tag index- like Noun-->0, Verb -->1, etc) or applied word embeding (e.g. Extracting the Pretrained Word2Vec embedding for the term 'Noun' or 'Verb'). If you have any other approach to apply, please proceed! (Note you need to have a justification - why you apply it by using theoretial justification or empirical evaluation) 
+
+**Question: Do I need to save the word embedding model or Recurrent models?**<br/>
 Answer: We highly recommend you to save your best word embedding model, and load it when you use it in your code. Otherwise, it is sometimes removed and overwrite all your code so that you need to re-run the whole code again.
 
-**Question: Is there any other marking scheme/marking criteria available for the assignment?**
+**Question: Is there any other marking scheme/marking criteria available for the assignment?**<br/>
 Answer: The assignment specification is extremely detailed. The marking will be directly conducted based on the specification. It means you will get the full mark if you fulfill all the requirement that we mentioned in the specification.
 
-**Question: What do I need to write in the justification or explanation? How much do I need to articulate?**
+**Question: What do I need to write in the justification or explanation? How much do I need to articulate?**<br/>
 Answer: We recommend conducting empirical evaluation. Empirical evaluation refers to the appraisal of a theory by observation in experiments. The key to good empirical evaluation is the proper design and execution of the experiments so that the particular factors to be tested can be easily separated from other confounding factors. Hence, visualizing the comparison of different testing results is a good way to justify your decision. Explain the trends based on your understanding. You can find another way (other than comparing different models) as well - like citing the peer-reviewed publications. 
