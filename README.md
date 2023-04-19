@@ -96,6 +96,20 @@ The testing result and discussion should be described in the report  (refer to s
 
 
 
+## <img src="https://em-content.zobj.net/thumbs/120/whatsapp/326/envelope-with-arrow_1f4e9.png" width="30" />Assignment Submission Method
+**Due Date:** 11:59 PM, Saturday 20 May 2023
+
+**Submission:** LMS Assignment Submission Box (The submission box will be opened on 1 May 2023)
+
+**You Must Submit Three Files:**
+- pdf file: a report (documentation) with the given template
+(file name: cits4012_your_groupid.pdf)
+- ipynb file or python packages (.py files): An ipynb file or python package that includes all your implementation (the implementation is described in the following sections - dataset, NER model, and testing-leaderboard)
+(file name: cits4012_your_groupid.ipynb)
+- zip file: A zip file that contains trained models, dataset, readme - if necessary, and all other required files that you used for your program.
+(file name: cits4012_your_groupid.zip)
+
 
 ## <img src="https://em-content.zobj.net/thumbs/120/google/350/person-raising-hand_1f64b.png" width="30" />FAQ
 - How can we make POS Tag or NER Tag to the embedding? 
+- 
