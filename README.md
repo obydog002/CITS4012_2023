@@ -63,7 +63,7 @@ You are to propose and implement the open-ended QA framework using word embeddin
 
 <img src="https://github.com/adlnlp/CITS4012_2023/blob/main/assignment_overview.png" width="80%"><p align="center">**Figure 2. Overview of the Architecture of the WikiQA**</p>
 
-**1) Word Embeddings and Feature Extraction [5 marks]**
+**1) Input Embedding [5 marks]**
 <br/>
 You are asked to generate the word vector by using the word embedding model and different types of features. For example, in Figure 2, the word ‘Perito’ is converted to the vector [word2vec, PER, 9, NNP, …].  
 
