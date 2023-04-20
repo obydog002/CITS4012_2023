@@ -14,7 +14,7 @@ In this assignment, you are to propose and implement a Wiki QA (Question Answeri
 Note that we specified which lectures and labs are highly related!
 
 **Table of Contents**
-- [0. Important Dates (Very Important!!)](https://github.com/adlnlp/CITS4012_2023#0important-dates-and-schedule)
+- [0. Important Dates (Very Important!!)](https://github.com/adlnlp/CITS4012_2023#0important-dates)
 - [1. DataSet](https://github.com/adlnlp/CITS4012_2023#-1-dataset-4-marks)
 - [2. QA Model Implementation](https://github.com/adlnlp/CITS4012_2023#2qa-model-implementation-10-marks)
 - [3. Model Testing](https://github.com/adlnlp/CITS4012_2023#3model-testing-9-marks)
