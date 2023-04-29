@@ -12,6 +12,7 @@ class WordEmbed:
             embeds.append(glo100model[word_tup[0].lower()])
         return embeds
     
+    # currently tokenize_question_and_doc is returning a list of lists (one for each sentence)
     def glove_embed(doc):
         doc_embeds = []
         for sentence in doc:
@@ -29,3 +30,20 @@ class WordEmbed:
     #     for sentence in doc:
     #         doc_embeds.append(w2v_embed_sent(sentence))
     #     return doc_embeds
+
+class FeatExt:
+
+    def pos_tag(doc):
+        pass
+
+    def tf_idf(doc):
+        pass
+
+    def ner_tag(doc):
+        pass
+
+    def word_match(doc):
+        pass
+
+    def lemmatize(word): # probably required for word_match()
+        pass
