@@ -37,6 +37,7 @@ class WordEmbed:
 class FeatExt:
 
     def untuple(doc):
+        # not needed anymore since I've changed data prep
         untuped_doc = []
         for sentence in doc:
             untuped_sent = []
