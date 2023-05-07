@@ -3,18 +3,18 @@ import torch.nn.functional as F
 
 # QA with document RNN model
 # use attention between the question and document.
-class DocumentRNNModel(nn.Module):
+class DocumentModel(nn.Module):
     ATTN_TYPE_DOT_PRODUCT = "Dot Product"
     ATTN_TYPE_SCALE_DOT_PRODUCT = "Scale Dot Product"
 
     def __init__(self, n_input, n_hidden, n_class):
-        super(RNNModel, self).__init__()
+        super(DocumentModel, self).__init__()
 
         self.rnn = nn.RNN(n_input, n_hidden, batch_first=True, bidirectional=True)
         self.out = nn.Linear(2*n_hidden,n_class)
 
     def calc_attention(self, hidden, question_hidden, method):
-        if method == RNNModel.ATTN_TYPE_DOT_PRODUCT:
+        if method == DocumentModel.ATTN_TYPE_DOT_PRODUCT:
             weights =  F.softmax(torch.bmm(hidden, question_hidden), dim=-1)
             attention_output = torch.bmm(weigths, question_hidden)
             catted_output = torch.cat((attention_output, hidden), 1)
@@ -26,14 +26,14 @@ class DocumentRNNModel(nn.Module):
         # concat the last hidden states for both directions
         hidden_out = torch.cat((h_n[-1,:,:],h_n[-2,:,:]),1)
 
-        catted_output = self.calc_attention(hidden_out, question_hidden, DocumentRNNModel.ATTN_TYPE_DOT_PRODUCT)
+        catted_output = self.calc_attention(hidden_out, question_hidden, DocumentModel.ATTN_TYPE_DOT_PRODUCT)
 
         output = F.softmax(self.out(catted_output), dim=1)
         return output, hidden_out
 
-class QuestionRNNModel(nn.Module):
+class QuestionModel(nn.Module):
     def __init__(self, n_input, n_hidden, n_hidden_out):
-        super(QuestionRNNModel, self).__init__()
+        super(QuestionModel, self).__init__()
 
         self.rnn = nn.RNN(n_input, n_hidden, batch_first=True, bidirectional=True)
         self.linear = nn.Linear(2*n_hidden, n_hidden_out)
