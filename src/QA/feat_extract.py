@@ -69,22 +69,16 @@ class FeatExt:
         N = len(doc)
         doc_tf_idf = []
         for sentence in doc:
+            # create a dictionary of tf-idf values
             tf_idf = {}
-            # initialise counter for the doc
             counter = Counter(sentence)
-            # calculate total number of words in the doc
             total_num_words = len(sentence)
-            # get each unique word in the doc
             for term in np.unique(sentence):
-                # calculate Term Frequency 
                 tf = counter[term]/total_num_words
-                # calculate Document Frequency
                 df = doc_freq[term]
-                # calculate Inverse Document Frequency
                 idf = math.log(N/(df+1))+1
-                # calculate TF-IDF
                 tf_idf[term] = tf*idf
-            # then create list of tf-idf values
+            # then create list of tf-idf values using the dictionary
             sent_tf_idf = []
             for word in sentence:
                 sent_tf_idf.append(tf_idf[word])
@@ -110,6 +104,7 @@ class FeatExt:
         return ner_iobs, ner_types
 
     def ner_tag_doc(document):
+        # this MUST be run with non-tokenised sentences
         ner_iobs = []
         ner_types = []
         for sentence in document:

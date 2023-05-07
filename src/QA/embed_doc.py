@@ -2,7 +2,7 @@ import numpy as np
 from word_embed import WordEmbed
 from feat_extract import FeatExt
 
-# concatenate the embed and feature tags togethe
+# concatenate the embed and feature tags together
 # could add future functionality to choose to exclude certain features for ablation
 
 class EmbedAndConcat:
