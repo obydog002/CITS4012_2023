@@ -17,6 +17,11 @@ import numpy as np
 from collections import Counter
 import math
 
+# used for NER
+import spacy
+import en_core_web_sm
+ner_model = en_core_web_sm.load()
+import re
 
 class FeatExt:
 
@@ -86,11 +91,32 @@ class FeatExt:
             doc_tf_idf.append(sent_tf_idf)
         return doc_tf_idf
 
+    def ner_tag(sentence):
+        # this MUST be run with non-tokenised sentences
+        # we apply the same spacing regex as in the data_prep to try to ensure the
+        # output will be the same length as the tokenised sentence
+        spaced_sentence = re.sub('(?<=[^ ])(?=[.,!?()\'\"])|(?<=[.,!?()\'\"])(?=[^ ])', r' ', sentence)
+        ner_output = ner_model(spaced_sentence)
+        # we run as for loop just in case ner model has split the sentence
+        # into multiple sentences
+        ner_iobs = []
+        ner_types = []
+        for sent in ner_output.sents:
+            for word in sent:
+                ner_iobs.append(word.ent_iob)
+                ner_types.append(word.ent_type)
+                # these are both numeric indices, rather than labels
+                # so no further processing needs to be done
+        return ner_iobs, ner_types
 
-
-
-    def ner_tag(doc):
-        pass
+    def ner_tag_doc(document):
+        ner_iobs = []
+        ner_types = []
+        for sentence in document:
+            ner_output = FeatExt.ner_tag(sentence[0])
+            ner_iobs.append(ner_output[0])
+            ner_types.append(ner_output[1])
+        return ner_iobs, ner_types
 
     def word_match(doc):
         pass
