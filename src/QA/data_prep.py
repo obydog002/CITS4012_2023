@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 
 class DataPrep:
     def parse_tsv(path):
@@ -8,21 +9,33 @@ class DataPrep:
     def tokenize_question_and_doc(question_doc_list):
         tok_q = DataPrep.tokenize_question(question_doc_list["question"])
         tok_doc = []
+        tok_ans = []
         for doc_tup in question_doc_list["document"]:
-            tok_doc.append(DataPrep.tokenize_doc(doc_tup))
-        return (tok_q, tok_doc)
+            tok_tup = DataPrep.tokenize_doc(doc_tup)
+            tok_doc.append(tok_tup[0])
+            tok_ans.append(tok_tup[1])
+        return (tok_q, tok_doc, tok_ans)
 
     def tokenize_question(question):
-        sentence = str.split(question, " ")
+        # this regex finds all .,!?()'" punctuation and adds a space before or after it, if needed
+        sentence = re.sub('(?<=[^ ])(?=[.,!?()\'\"])|(?<=[.,!?()\'\"])(?=[^ ])', r' ', question).split(" ")
         return sentence
 
     def tokenize_doc(doc_tup):
-        sentence = str.split(doc_tup[0], " ")
+        # this regex finds all .,!?()'" punctuation and adds a space before or after it, if needed
+        sentence = re.sub('(?<=[^ ])(?=[.,!?()\'\"])|(?<=[.,!?()\'\"])(?=[^ ])', r' ', doc_tup[0]).split(" ")
         label = doc_tup[1]
+        answer = []
+        doc = []
         if label == 0: # non-answer sentence
-            return [[word, "OOA"] for word in sentence]
+            for word in sentence:
+                doc.append(word)
+                answer.append("OOA")
+            return doc,answer
         if label  == 1: # answer
-            encoded = [[word, "IOA"] for word in sentence]
-            encoded[0][1] = "BOA"
-            encoded[-1][1] = "EOA"
-            return encoded
+            for word in sentence:
+                doc.append(word)
+                answer.append("IOA")
+            answer[0] = "BOA"
+            answer[-1] = "EOA"
+            return (doc,answer)
