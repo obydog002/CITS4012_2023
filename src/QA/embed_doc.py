@@ -6,7 +6,6 @@ from feat_extract import FeatExt
 # could add future functionality to choose to exclude certain features for ablation
 
 class EmbedAndConcat:
-
     def doc_concat(document, with_ner = False, doc_ner_tags = None):
         doc_embeds = WordEmbed.glove_embed(document)
         pos_indices = FeatExt.get_pos_tags(document)

@@ -6,6 +6,25 @@ class DataPrep:
         df = pd.read_csv(path, sep="\t")
         return df
 
+    # creates a json indexed with each unique question.
+    # the question has the corresponding document containined the answer
+    # a document can be repeated if there are multiple questions
+    def convert_pd_to_json(df):
+        question_id_list = df.loc[:, "QuestionID"]
+        question_id_list = list(set(question_id_list))
+        question_id_list.sort()
+
+        question_id = {}
+        for i in df.index:
+            row = df.loc[i]
+            id = row["QuestionID"]
+            if id not in question_id:
+                question_id[id] = {"document": []}
+                question_id[id]["question"] = row["Question"]
+            
+            question_id[id]["document"].append((row["Sentence"], row["Label"]))
+        return question_id
+
     def tokenize_question_and_doc(question_doc_list):
         tok_q = DataPrep.tokenize_question(question_doc_list["question"])
         tok_doc = []

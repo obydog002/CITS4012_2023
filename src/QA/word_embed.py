@@ -10,7 +10,16 @@ class WordEmbed:
     def glove_embed_sent(sentence):
         embeds = []
         for word_tup in sentence:
-            embeds.append(glo100model[word_tup[0].lower()])
+            # TODO - some word_tups are empty?
+            if word_tup == "":
+                embeds.append(glo100model["empty"])
+            # TODO - choose a more appropriate way of handling this
+            lowered = word_tup[0].lower()
+            print(lowered)
+            if lowered in glo100model:
+                embeds.append(glo100model[lowered])
+            else:
+                embeds.append(glo100model["unknown"])
         return embeds
     
     def glove_embed(doc):
