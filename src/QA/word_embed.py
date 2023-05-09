@@ -16,7 +16,6 @@ class WordEmbed:
                 embeds.append(glo100model[lword])
             else:
                 embeds.append(np.zeros(100))
-
         return embeds
     
     def glove_embed(doc):
