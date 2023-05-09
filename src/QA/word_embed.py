@@ -1,3 +1,4 @@
+import numpy as np
 import gensim.downloader as api
 from nltk.translate.ribes_score import sentence_ribes
 glo100model = api.load("glove-wiki-gigaword-100")
@@ -9,8 +10,12 @@ class WordEmbed:
 
     def glove_embed_sent(sentence):
         embeds = []
-        for word_tup in sentence:
-            embeds.append(glo100model[word_tup[0].lower()])
+        for word in sentence:
+            lword = word.lower()
+            if lword in glo100model:
+                embeds.append(glo100model[lword])
+            else:
+                embeds.append(np.zeros(100))
         return embeds
     
     def glove_embed(doc):
