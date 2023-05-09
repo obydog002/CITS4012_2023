@@ -1,3 +1,4 @@
+import numpy as np
 import gensim.downloader as api
 from nltk.translate.ribes_score import sentence_ribes
 glo100model = api.load("glove-wiki-gigaword-100")
@@ -9,17 +10,13 @@ class WordEmbed:
 
     def glove_embed_sent(sentence):
         embeds = []
-        for word_tup in sentence:
-            # TODO - some word_tups are empty?
-            if word_tup == "":
-                embeds.append(glo100model["empty"])
-            # TODO - choose a more appropriate way of handling this
-            lowered = word_tup[0].lower()
-            print(lowered)
-            if lowered in glo100model:
-                embeds.append(glo100model[lowered])
+        for word in sentence:
+            lword = word.lower()
+            if lword in glo100model:
+                embeds.append(glo100model[lword])
             else:
-                embeds.append(glo100model["unknown"])
+                embeds.append(np.zeros(100))
+
         return embeds
     
     def glove_embed(doc):

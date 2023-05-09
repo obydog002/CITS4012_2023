@@ -89,7 +89,7 @@ class FeatExt:
         # this MUST be run with non-tokenised sentences
         # we apply the same spacing regex as in the data_prep to try to ensure the
         # output will be the same length as the tokenised sentence
-        spaced_sentence = re.sub('(?<=[^ ])(?=[.,!?()\'\"])|(?<=[.,!?()\'\"])(?=[^ ])', r' ', sentence)
+        spaced_sentence = re.sub('(?<=[^ ])(?=[.,!?()\'\"\-:;])|(?<=[.,!?()\'\"\-:;])(?=[^ ])|\s{2,}', r' ', sentence)
         ner_output = ner_model(spaced_sentence)
         # we run as for loop just in case ner model has split the sentence
         # into multiple sentences

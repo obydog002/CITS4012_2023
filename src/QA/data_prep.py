@@ -36,23 +36,24 @@ class DataPrep:
         return (tok_q, tok_doc, tok_ans)
 
     def tokenize_question(question):
-        # this regex finds all .,!?()'" punctuation and adds a space before or after it, if needed
-        sentence = re.sub('(?<=[^ ])(?=[.,!?()\'\"])|(?<=[.,!?()\'\"])(?=[^ ])', r' ', question).split(" ")
-        return sentence
+        # this regex finds all .,!?()'"-:; punctuation and adds a space before or after it, if needed
+        #
+        sentence_toks = re.sub('(?<=[^ ])(?=[.,!?()\'\"\-:;])|(?<=[.,!?()\'\"\-:;])(?=[^ ])|\s{2,}', r' ', question).split()
+        return sentence_toks
 
     def tokenize_doc(doc_tup):
-        # this regex finds all .,!?()'" punctuation and adds a space before or after it, if needed
-        sentence = re.sub('(?<=[^ ])(?=[.,!?()\'\"])|(?<=[.,!?()\'\"])(?=[^ ])', r' ', doc_tup[0]).split(" ")
+        # this regex finds all .,!?()'"-:; punctuation and adds a space before or after it, if needed
+        sentence_toks = re.sub('(?<=[^ ])(?=[.,!?()\'\"\-:;])|(?<=[.,!?()\'\"\-:;])(?=[^ ])|\s{2,}', r' ', doc_tup[0]).split()
         label = doc_tup[1]
         answer = []
         doc = []
         if label == 0: # non-answer sentence
-            for word in sentence:
+            for word in sentence_toks:
                 doc.append(word)
                 answer.append("OOA")
             return doc,answer
         if label  == 1: # answer
-            for word in sentence:
+            for word in sentence_toks:
                 doc.append(word)
                 answer.append("IOA")
             answer[0] = "BOA"
