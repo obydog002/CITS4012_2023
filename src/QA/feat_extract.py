@@ -23,6 +23,13 @@ import en_core_web_sm
 ner_model = en_core_web_sm.load()
 import re
 
+# used for word match
+from nltk.corpus import stopwords as sw
+stop_words = sw.words()
+nltk.download('wordnet')
+from nltk.stem import WordNetLemmatizer
+lemmatizer = WordNetLemmatizer()
+
 class FeatExt:
 
     def get_pos_tags(doc):
@@ -113,8 +120,25 @@ class FeatExt:
             ner_types.append(ner_output[1])
         return ner_iobs, ner_types
 
-    def word_match(doc):
-        pass
+    def lemma_the_question(q_tokens):
+        filtered_sentence = [word for word in q_tokens if not word in stop_words]
+        # lemmatise question words remaining
+        q_lemmas = [lemmatizer.lemmatize(word) for word in filtered_sentence]
+        return q_lemmas        
+
+    def word_match(document, q_lemmas):
+        word_match_list = []
+        for sentence in document:
+            sent_word_matches = []
+            for word in sentence:
+                word_lemma = lemmatizer.lemmatize(word)
+                if word_lemma in q_lemmas:
+                    sent_word_matches.append(1)
+                else:
+                    sent_word_matches.append(0)
+            word_match_list.append(sent_word_matches)
+        # output
+        return word_match_list
 
     def lemmatize(word): # probably required for word_match()
         pass
