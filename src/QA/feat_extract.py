@@ -139,6 +139,3 @@ class FeatExt:
             word_match_list.append(sent_word_matches)
         # output
         return word_match_list
-
-    def lemmatize(word): # probably required for word_match()
-        pass
