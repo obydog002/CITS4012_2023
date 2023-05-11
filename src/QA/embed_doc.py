@@ -18,21 +18,17 @@ class EmbedAndConcat:
         if with_ner == True:
             for i in range(num_sents):
                 num_words = len(document[i])
-                embedded_sentence = []
                 for j in range(num_words):
                     embedded_word = np.concatenate((doc_embeds[i][j],
                     np.array([pos_indices[i][j],tf_idf_nums[i][j], word_matches[i][j],
                     doc_ner_tags[0][i][j],doc_ner_tags[1][i][j]])))
-                    embedded_sentence.append(embedded_word)
-                embedded_document.append(embedded_sentence)
+                    embedded_document.append(embedded_word)
         else:
             for i in range(num_sents):
                 num_words = len(document[i])
-                embedded_sentence = []
                 for j in range(num_words):
                     embedded_word = np.concatenate((doc_embeds[i][j], np.array(([pos_indices[i][j],tf_idf_nums[i][j]]))))
-                    embedded_sentence.append(embedded_word)
-                embedded_document.append(embedded_sentence)
+                    embedded_document.append(embedded_word)
         return embedded_document
 
     def q_concat(question, with_ner = False, question_ner_tags = None):
