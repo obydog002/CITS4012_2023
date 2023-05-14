@@ -6,33 +6,34 @@ class DataPrep:
         df = pd.read_csv(path, sep="\t")
         return df
 
-    # creates a json indexed with each unique question.
-    # the question has the corresponding document containined the answer
-    # a document can be repeated if there are multiple questions
-    def convert_pd_to_json(df):
-        question_id_list = df.loc[:, "QuestionID"]
-        question_id_list = list(set(question_id_list))
-        question_id_list.sort()
-
-        question_id = {}
-        for i in df.index:
-            row = df.loc[i]
-            id = row["QuestionID"]
-            if id not in question_id:
-                question_id[id] = {"document": []}
-                question_id[id]["question"] = row["Question"]
-            
-            question_id[id]["document"].append((row["Sentence"], row["Label"]))
-        return question_id
-
-    def tokenize_question_and_doc(question_doc_list):
+    def tokenize_question_and_doc(question_doc_list, befaft=False):
         tok_q = DataPrep.tokenize_question(question_doc_list["question"])
         tok_doc = []
         tok_ans = []
-        for doc_tup in question_doc_list["document"]:
-            tok_tup = DataPrep.tokenize_doc(doc_tup)
-            tok_doc.append(tok_tup[0])
-            tok_ans.append(tok_tup[1])
+        if befaft == True: # before-answer-after labeling
+            # labels words with "before answer", "in answer", and "after answer"
+            tok_q = DataPrep.tokenize_question(question_doc_list["question"])
+            tok_doc = []
+            tok_ans = []
+            ans_lab = 'BA' # intialise with before answer token
+            for doc_tup in question_doc_list["document"]:
+                if doc_tup[1] == 1:
+                    ans_lab = "IA" # answer
+                sentence_toks = re.sub('(?<=[^ ])(?=[.,!?()\'\"\-:;])|(?<=[.,!?()\'\"\-:;])(?=[^ ])|\s{2,}', r' ', doc_tup[0]).lower().split()
+                doc = []
+                answer = []
+                for word in sentence_toks:
+                    doc.append(word)
+                    answer.append(ans_lab)
+                tok_doc.append(doc)
+                tok_ans.append(answer)
+                if doc_tup[1] == 1:
+                    ans_lab = 'AA' # change label to after answer
+        else: # outside-answer begining-of-answer inside-of-answer end-of-answer labeling
+            for doc_tup in question_doc_list["document"]:
+                tok_tup = DataPrep.tokenize_doc(doc_tup)
+                tok_doc.append(tok_tup[0])
+                tok_ans.append(tok_tup[1])
         return (tok_q, tok_doc, tok_ans)
 
     def tokenize_question(question):
