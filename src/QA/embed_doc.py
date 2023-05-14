@@ -32,10 +32,10 @@ class EmbedAndConcat:
                     doc_embeds[i][j] = np.concatenate((doc_embeds[i][j], np.array([word_matches[i][j]])))
         if with_ner == True:
             for i in range(num_sents):
-                for j in range(num_words):
+                for j in range(num_words[i]):
                     doc_embeds[i][j] = np.concatenate((doc_embeds[i][j], np.array([doc_ner_tags[0][i][j],doc_ner_tags[1][i][j]])))
         for i in range(num_sents):
-            for j in range(num_words):
+            for j in range(num_words[i]):
                 embedded_document.append(doc_embeds[i][j]) # add embedded word to document
         return embedded_document
 
