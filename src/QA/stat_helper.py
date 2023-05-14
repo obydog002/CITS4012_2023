@@ -1,4 +1,4 @@
-class Stat:
+class StatHelper:
     def get_class_weights(target_list, classes):
         freqs = [0]*classes
         for targets in target_list:

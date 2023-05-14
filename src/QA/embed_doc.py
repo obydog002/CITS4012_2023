@@ -16,10 +16,9 @@ class EmbedAndConcat:
             q_embeds = EmbedAndConcat.q_concat(toks[0])
             doc_embeds = EmbedAndConcat.doc_concat(toks[1])
 
-            unrolled_doc_embeds = [word_embed for sentence in doc_embeds for word_embed in sentence]
             unrolled_doc_targets = [target for sentence in toks[2] for target in sentence]
             q_inputs.append(q_embeds)
-            doc_inputs.append(unrolled_doc_embeds)
+            doc_inputs.append(doc_embeds)
             doc_targets.append(unrolled_doc_targets)
         return q_inputs, doc_inputs, doc_targets
 

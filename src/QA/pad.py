@@ -1,3 +1,5 @@
+import numpy as np
+
 class Pad:
     def cut(desired_size, items):
         for elt in items:
@@ -17,8 +19,8 @@ class Pad:
                     items[i].extend([np.array([0] * emb_size) for x in range(elt_len, desired_size)])
 
     def cut_pad_to(desired_size, items, target=False):
-        cut(desired_size, items)
-        pad(desired_size, items, target=target)
+        Pad.cut(desired_size, items)
+        Pad.pad(desired_size, items, target=target)
 
     def get_max(items):
         return max(len(item) for item in items)
