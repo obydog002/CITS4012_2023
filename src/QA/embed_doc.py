@@ -1,11 +1,28 @@
 import numpy as np
 from word_embed import WordEmbed
 from feat_extract import FeatExt
+from data_prep import DataPrep
 
 # concatenate the embed and feature tags together
 # could add future functionality to choose to exclude certain features for ablation
 
 class EmbedAndConcat:
+    def get_unrolled_embeddings(converted_json):
+        q_inputs = []
+        doc_inputs = []
+        doc_targets = []
+        for key in converted_json.keys():
+            toks = DataPrep.tokenize_question_and_doc(converted_json[key])
+            q_embeds = EmbedAndConcat.q_concat(toks[0])
+            doc_embeds = EmbedAndConcat.doc_concat(toks[1])
+
+            unrolled_doc_embeds = [word_embed for sentence in doc_embeds for word_embed in sentence]
+            unrolled_doc_targets = [target for sentence in toks[2] for target in sentence]
+            q_inputs.append(q_embeds)
+            doc_inputs.append(unrolled_doc_embeds)
+            doc_targets.append(unrolled_doc_targets)
+        return q_inputs, doc_inputs, doc_targets
+
     def doc_concat(document, with_ner = False, doc_ner_tags = None, q_lemmas=[]):
         # default will run without NER, and return word match of all zeros
         doc_embeds = WordEmbed.glove_embed(document)

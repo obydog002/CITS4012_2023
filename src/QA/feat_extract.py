@@ -3,6 +3,8 @@ import nltk
 from nltk.tag import pos_tag_sents
 from nltk.tag import pos_tag
 nltk.download('averaged_perceptron_tagger')
+nltk.download('stopwords')
+nltk.download('omw-1.4')
 
 # used to index the pos tags in FeatExt
 index_of_pos = {'CC': 0, 'CD': 1, 'DT': 2, 'EX': 3, 'FW': 4, 'IN': 5, 'JJ': 6, 'JJR': 7,
