@@ -6,30 +6,28 @@ from feat_extract import FeatExt
 # could add future functionality to choose to exclude certain features for ablation
 
 class EmbedAndConcat:
-    def doc_concat(document, with_ner = False, doc_ner_tags = None):
+    def doc_concat(document, with_ner = False, doc_ner_tags = None, q_lemmas=[]):
+        # default will run without NER, and return word match of all zeros
         doc_embeds = WordEmbed.glove_embed(document)
         pos_indices = FeatExt.get_pos_tags(document)
         tf_idf_nums = FeatExt.tf_idf_fun(document)
+        word_matches = FeatExt.word_match(document, q_lemmas)
         embedded_document = []
         num_sents = len(document)
         if with_ner == True:
             for i in range(num_sents):
                 num_words = len(document[i])
-                embedded_sentence = []
                 for j in range(num_words):
                     embedded_word = np.concatenate((doc_embeds[i][j],
-                    np.array([pos_indices[i][j],tf_idf_nums[i][j],
+                    np.array([pos_indices[i][j],tf_idf_nums[i][j], word_matches[i][j],
                     doc_ner_tags[0][i][j],doc_ner_tags[1][i][j]])))
-                    embedded_sentence.append(embedded_word)
-                embedded_document.append(embedded_sentence)
+                    embedded_document.append(embedded_word)
         else:
             for i in range(num_sents):
                 num_words = len(document[i])
-                embedded_sentence = []
                 for j in range(num_words):
                     embedded_word = np.concatenate((doc_embeds[i][j], np.array(([pos_indices[i][j],tf_idf_nums[i][j]]))))
-                    embedded_sentence.append(embedded_word)
-                embedded_document.append(embedded_sentence)
+                    embedded_document.append(embedded_word)
         return embedded_document
 
     def q_concat(question, with_ner = False, question_ner_tags = None):
