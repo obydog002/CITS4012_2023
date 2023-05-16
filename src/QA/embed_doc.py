@@ -7,14 +7,25 @@ from data_prep import DataPrep
 # could add future functionality to choose to exclude certain features for ablation
 
 class EmbedAndConcat:
-    def get_unrolled_embeddings(converted_json):
+    def get_unrolled_embeddings(converted_json, befaft = False, doc_with_pos = True, doc_with_tfidf = True, doc_with_ner = False, doc_with_wm = False, q_with_pos = True, q_with_ner = False):
         q_inputs = []
         doc_inputs = []
         doc_targets = []
         for key in converted_json.keys():
-            toks = DataPrep.tokenize_question_and_doc(converted_json[key])
-            q_embeds = EmbedAndConcat.q_concat(toks[0])
-            doc_embeds = EmbedAndConcat.doc_concat(toks[1])
+            toks = DataPrep.tokenize_question_and_doc(converted_json[key], befaft=befaft)
+
+            q_ner_tags = None
+            if q_with_ner:
+                q_ner_tags = FeatExt.ner_tag(converted_json[key]["question"])
+            q_embeds = EmbedAndConcat.q_concat(toks[0], q_with_pos, q_with_ner, q_ner_tags)
+
+            doc_ner_tags = None
+            if doc_with_ner:
+                doc_ner_tags = FeatExt.ner_tag_doc(converted_json[key]["document"])
+            q_lemmas = None
+            if doc_with_wm:
+                q_lemmas = FeatExt.lemma_the_question(toks[0])
+            doc_embeds = EmbedAndConcat.doc_concat(toks[1], doc_with_pos, doc_with_tfidf, doc_with_ner, doc_ner_tags, doc_with_wm, q_lemmas)
 
             unrolled_doc_targets = [target for sentence in toks[2] for target in sentence]
             q_inputs.append(q_embeds)
