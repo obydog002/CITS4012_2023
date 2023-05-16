@@ -7,12 +7,15 @@ from data_prep import DataPrep
 # could add future functionality to choose to exclude certain features for ablation
 
 class EmbedAndConcat:
-    def get_unrolled_embeddings(converted_json, befaft = False, doc_with_pos = True, doc_with_tfidf = True, doc_with_ner = False, doc_with_wm = False, q_with_pos = True, q_with_ner = False):
+    def get_unrolled_embeddings(converted_json, befaft=False, doc_with_pos = True, doc_with_tfidf = True, doc_with_ner = False, doc_with_wm = False, q_with_pos = True, q_with_ner = False):
         q_inputs = []
         doc_inputs = []
         doc_targets = []
         for key in converted_json.keys():
-            toks = DataPrep.tokenize_question_and_doc(converted_json[key], befaft=befaft)
+            if befaft:
+                toks = DataPrep.tokenize_question_and_doc_befaft(converted_json[key])
+            else:
+                toks = DataPrep.tokenize_question_and_doc(converted_json[key])
 
             q_ner_tags = None
             if q_with_ner:

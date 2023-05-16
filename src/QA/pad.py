@@ -14,7 +14,14 @@ class Pad:
             elt_len = len(items[i])
             if elt_len < desired_size:
                 if target: # append empty answer to target
-                    items[i].extend(['OOA'] * (desired_size - elt_len))
+                    # check bafaft
+                    empty_token = "OOA"
+                    if elt_len > 0 and items[i][elt_len - 1] == "BA":
+                        empty_token = "BA"
+                    elif elt_len > 0 and (items[i][elt_len - 1] == "IA" or items[i][elt_len - 1] == "AA"):
+                        empty_token = "AA"
+
+                    items[i].extend([empty_token] * (desired_size - elt_len))
                 else: # pad empty arrays
                     items[i].extend([np.array([0] * emb_size) for x in range(elt_len, desired_size)])
 

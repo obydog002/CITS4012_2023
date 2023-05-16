@@ -20,6 +20,8 @@ from model import QA_RNN
 from model.train import Trainer
 from model.eval import Eval
 
+import time
+
 Out_And_In_target2int = {"OOA": 0, "IOA": 1, "BOA": 1, "EOA": 1}
 Out_In_Beg_End_target2int = {"OOA": 0, "IOA": 1, "BOA": 2, "EOA": 3}
 Bef_In_Aft_target2int = {"BA": 0, "IA": 1, "AA": 2}
@@ -27,7 +29,17 @@ Bef_In_Aft_target2int = {"BA": 0, "IA": 1, "AA": 2}
 question_doc_raw_train = DataPrep.convert_pd_to_json(DataPrep.parse_tsv("../WikiQA-train.tsv"))
 question_doc_raw_test = DataPrep.convert_pd_to_json(DataPrep.parse_tsv("../WikiQA-test.tsv"))
 
-def load_and_get_tensors(q_cut_size="Max", doc_cut_size="Max", answer_type="Out_And_In", befaft = False, doc_with_pos = True, doc_with_tfidf = True, doc_with_ner = False, doc_with_wm = False, q_with_pos = True, q_with_ner = False):
+def load_and_get_tensors(loading_param):
+    q_cut_size = loading_param["q_cut_size"]
+    doc_cut_size = loading_param["doc_cut_size"]
+    answer_type = loading_param["answer_type"]
+    befaft = loading_param["befaft"]
+    doc_with_pos = loading_param["doc_with_pos"]
+    doc_with_tfidf = loading_param["doc_with_tfidf"]
+    doc_with_ner = loading_param["doc_with_ner"]
+    doc_with_wm = loading_param["doc_with_wm"]
+    q_with_pos = loading_param["q_with_pos"]
+    q_with_ner = loading_param["q_with_ner"]
     train_q_inputs, train_doc_inputs, train_doc_targets = EmbedAndConcat.get_unrolled_embeddings(question_doc_raw_train, befaft, doc_with_pos, doc_with_tfidf, doc_with_ner, doc_with_wm, q_with_pos, q_with_ner)
 
     test_q_inputs, test_doc_inputs, test_doc_targets = EmbedAndConcat.get_unrolled_embeddings(question_doc_raw_test, befaft, doc_with_pos, doc_with_tfidf, doc_with_ner, doc_with_wm, q_with_pos, q_with_ner)
@@ -37,6 +49,14 @@ def load_and_get_tensors(q_cut_size="Max", doc_cut_size="Max", answer_type="Out_
     if doc_cut_size == "Max":
         doc_cut_size = max(Pad.get_max(train_doc_inputs), Pad.get_max(test_doc_inputs))
 
+    # ignore answer_type if we are doing befaft
+    if befaft:
+        target2int = Bef_In_Aft_target2int
+    elif answer_type == "Out_And_In":
+        target2int = Out_And_In_target2int
+    elif answer_type == "Out_In_Beg_End":
+        target2int = Out_In_Beg_End_target2int
+
     Pad.cut_pad_to(q_cut_size, train_q_inputs)
     Pad.cut_pad_to(q_cut_size, test_q_inputs)
     Pad.cut_pad_to(doc_cut_size, train_doc_inputs)
@@ -44,24 +64,15 @@ def load_and_get_tensors(q_cut_size="Max", doc_cut_size="Max", answer_type="Out_
     Pad.cut_pad_to(doc_cut_size, train_doc_targets, target=True)
     Pad.cut_pad_to(doc_cut_size, test_doc_targets, target=True)
 
-    if answer_type == "Out_And_In":
-        target2int = Out_And_In_target2int
-    elif answer_type == "Out_In_Beg_End":
-        target2int = Out_In_Beg_End_target2int
-    else:
-        target2int = Bef_In_Aft_target2int
-
     Pad.convert_targets(train_doc_targets, target2int)
     Pad.convert_targets(test_doc_targets, target2int)
     number_of_classes = max(target2int.values()) + 1
 
-    print(number_of_classes)
     training_class_weights = StatHelper.get_class_weights(train_doc_targets, number_of_classes)
-
 
     train_question_tensor = torch.Tensor(train_q_inputs)
     train_doc_tensor = torch.Tensor(train_doc_inputs)
-    train_target_tensor = torch.Tensor(train_doc_targets)
+    train_target_tensor = torch.LongTensor(train_doc_targets)
 
     test_question_tensor = torch.Tensor(test_q_inputs)
     test_doc_tensor = torch.Tensor(test_doc_inputs)
@@ -69,29 +80,75 @@ def load_and_get_tensors(q_cut_size="Max", doc_cut_size="Max", answer_type="Out_
 
     return train_question_tensor, train_doc_tensor, train_target_tensor, training_class_weights, test_question_tensor, test_doc_tensor, test_target_tensor, number_of_classes
 
-def do_training_and_eval(train_question_tensor, train_doc_tensor, train_target_tensor, train_loader, test_question_tensor, test_doc_tensor, test_target_tensor, training_class_weights, hidden_size, number_of_classes, learning_rate):
+def do_training_and_eval(train_question_tensor, train_doc_tensor, train_target_tensor, train_loader, test_question_tensor, test_doc_tensor, test_target_tensor, training_class_weights, number_of_classes, training_param):
+    learning_rate = training_param["learning_rate"]
+    bidirectional = training_param["bidirectional"]
+    attention_type = training_param["attention_type"]
+    hidden_type = training_param["hidden_type"]
+    doc_hidden_layers = training_param["doc_hidden_layers"]
+    hidden_size = training_param["hidden_size"]
+    iters_inc = training_param["iters_inc"]
+
     q_embed_size = list(train_loader)[0][0].shape[2]
     doc_embed_size = list(train_loader)[0][1].shape[2]
-    question_rnn_model = QA_RNN.QuestionModel(q_embed_size, hidden_size).to(device)
-    doc_rnn_model = QA_RNN.DocumentModel(doc_embed_size, hidden_size, number_of_classes).to(device)
+
+    doc_rnn_model = QA_RNN.DocumentModel(doc_embed_size, hidden_size, number_of_classes, hidden_layers = doc_hidden_layers, bidirectional=bidirectional).to(device)
+    question_rnn_model = QA_RNN.QuestionModel(q_embed_size, hidden_size, bidirectional=bidirectional).to(device)
 
     criterion = nn.NLLLoss(weight=torch.Tensor(training_class_weights))
     question_model_optimizer = optim.SGD(question_rnn_model.parameters(), lr=learning_rate)
     document_model_optimizer = optim.SGD(doc_rnn_model.parameters(), lr=learning_rate)
-    
-    print("Starting training..")
-    # train model for 1, 5, 10, 20, 40 iterations, and record performances
-    iters_inc = [1,4,5,10,20] 
+
+    results = {}
     total_iters = 0
     for inc in iters_inc:
-        #Trainer.trainIters(question_rnn_model, doc_rnn_model, inc, train_loader, criterion, question_model_optimizer, document_model_optimizer)
-        #Eval.evaluate(test_question_tensor, test_doc_tensor, test_target_tensor, question_rnn_model, doc_rnn_model)
+        Trainer.trainIters(question_rnn_model, doc_rnn_model, inc, train_loader, criterion, question_model_optimizer, document_model_optimizer)
+        train_loss, train_report = Eval.evaluate(train_question_tensor, train_doc_tensor, train_target_tensor, question_rnn_model, doc_rnn_model, criterion)
+        test_loss, test_report = Eval.evaluate(test_question_tensor, test_doc_tensor, test_target_tensor, question_rnn_model, doc_rnn_model, criterion)
         total_iters += inc
-        print(f"trained for {total_iters}"....)
+        results[total_iters] = {"train_loss": train_loss, "train_report": train_report, "test_loss": test_loss, "test_report": test_report}
+        print(f"Trained on {total_iters}.")
+
+    return results
+
+load_times = []
+batch_times = []
+train_times = []
+
+master_results = {}
+import pickle
+import os
+
+if os.path.exists("results.pkl"):
+    with open('results.pkl', 'rb') as f:
+        master_results = pickle.load(f)
+
+def save_master_results():
+    with open('results.pkl', 'wb') as f:
+        pickle.dump(master_results, f)
+
+import statistics
+def get_expected_time_s(times, n_left):
+    if len(times) == 0:
+        return n_left * 60 # default 60s
+    else:
+        return statistics.fmean(times) * n_left
+
+def print_time_nicely(secs):
+    secs = int(secs)
+    mins = 0
+    hours = 0
+    time_str = f"{secs % 60}s"
+    if secs > 60:
+        mins = secs // 60
+        time_str = f"{mins % 60}m " + time_str
+    if mins > 60:
+        hours = mins // 60
+        time_str = f"{hours}h " + time_str
+    print(f"Expected time {time_str}")
 
 from itertools import product
-
-def train_all_models_on_param_grid(loading_params, training_params):
+def train_all_models_on_param_grid(loading_params, batch_params, training_params):
     def get_unrolled_params(params):
         keys, values = zip(*params.items())
         return [dict(zip(keys, p)) for p in product(*values)]
@@ -99,22 +156,70 @@ def train_all_models_on_param_grid(loading_params, training_params):
     loading_params = get_unrolled_params(loading_params)
     training_params = get_unrolled_params(training_params)
 
-    for loading_param in loading_params:
+    loading_params_len = len(loading_params)
+    batch_params_len = len(batch_params)
+    training_params_len = len(training_params)
+    print(f"total models: {loading_params_len*batch_params_len*training_params_len}")
 
-        train_question_tensor, train_doc_tensor, train_target_tensor, training_class_weights, test_question_tensor, test_doc_tensor, test_target_tensor, number_of_classes = load_and_get_tensors(doc_cut_size = loading_param["doc_cut_pad_to_length"], answer_type=loading_param["answer_type"], befaft=loading_param["befaft"], doc_with_pos=loading_param["doc_with_pos"], doc_with_tfidf=loading_param["doc_with_tfidf"], doc_with_ner=loading_param["doc_with_ner"], doc_with_wm=loading_param["doc_with_wm"], q_with_pos=loading_param["q_with_pos"], q_with_ner=loading_param["q_with_ner"])
+    for li, loading_param in enumerate(loading_params):
+        print("Starting load...")
+        print(f"load {li+1}/{loading_params_len}")
+        before_time = time.time()
+        train_question_tensor, train_doc_tensor, train_target_tensor, training_class_weights, test_question_tensor, test_doc_tensor, test_target_tensor, number_of_classes = load_and_get_tensors(loading_param)
+        load_times.append(time.time() - before_time)
 
-        for batch_param in batch_params:
+
+        for bi, batch_param in enumerate(batch_params):
+            print("Starting batch load...")
+            batch_full_index = li*batch_params_len + bi
+            print(f"batch {batch_full_index + 1}/{batch_params_len*loading_params_len}")
+            before_time = time.time()
             train_dataset = TensorDataset(train_question_tensor, train_doc_tensor, train_target_tensor)
             train_loader = DataLoader(dataset=train_dataset, batch_size=batch_param, shuffle=True) 
+            batch_times.append(time.time() - before_time)
 
-            for training_param in training_params:
-                do_training_and_eval(train_question_tensor, train_doc_tensor, train_target_tensor, train_loader, test_question_tensor, test_doc_tensor, test_target_tensor, training_class_weights, 100, number_of_classes, training_param["learning_rate"])
+            for ti, training_param in enumerate(training_params):
+                # freeze params for model description
+                frozen_param = loading_param.copy()
+                frozen_param.update({"batch": batch_param})
+                frozen_param.update(training_param)
+                frozen_param = frozenset(frozen_param.items()) 
+
+                # skip computed values
+                if frozen_param in master_results:
+                    continue
+
+                train_full_index = training_params_len*batch_full_index + ti
+                loading_s_to_expect = get_expected_time_s(load_times, loading_params_len - li - 1)
+                batch_s_to_expect = get_expected_time_s(batch_times, loading_params_len*batch_params_len - batch_full_index - 1)
+                train_s_to_expect = get_expected_time_s(train_times, loading_params_len*batch_params_len*training_params_len - train_full_index - 1)
+                print_time_nicely(loading_s_to_expect + batch_s_to_expect + train_s_to_expect)
+
+                print("Starting training model...")
+                print(f"train {train_full_index + 1}/{batch_params_len*loading_params_len*training_params_len}")
+                print(frozen_param)
+                print()
+
+                before_time = time.time()
+                results = do_training_and_eval(train_question_tensor, train_doc_tensor, train_target_tensor, train_loader, test_question_tensor, test_doc_tensor, test_target_tensor, training_class_weights, number_of_classes, training_param)
+                train_times.append(time.time() - before_time)
+
+                master_results[frozen_param] = results
+                save_master_results()
 
 
-loading_params = {"doc_cut_pad_to_length": [256, "Max"], 
-                  "answer_type": ["Out_And_In", "Out_In_Beg_End", "Bef_In_Aft"],
-                  "befaft": [False, True], "doc_with_pos": [False, True], "doc_with_tfidf": [False, True], "doc_with_ner": [False, True], "doc_with_wm": [False, True], "q_with_pos": [False, True], "q_with_ner": [False, True]}
-batch_params =[32, 128, 256]
-training_params = {"learning_rate": [0.00001, 0.0001, 0.001, 0.01, 0.1]}
+loading_params = {"q_cut_size": ["Max"],
+                  "doc_cut_size": [256], 
+                  "answer_type": ["Out_And_In"],
+                  "befaft": [False], "doc_with_pos": [True, False], "doc_with_tfidf": [True, False], 
+                  "doc_with_ner": [True, False], "doc_with_wm": [True, False], "q_with_pos": [True, False], 
+                  "q_with_ner": [True, False]}
+batch_params = [128]
+training_params = {"learning_rate": [0.00001, 0.0001, 0.001, 0.01, 0.1], "bidirectional": [False], 
+        "attention_type": [QA_RNN.DocumentModel.ATTN_TYPE_DOT_PRODUCT],
+        "hidden_type": [QA_RNN.DocumentModel.HIDDEN_TYPE_RNN],
+        "doc_hidden_layers": [1],
+        "hidden_size": [50],
+        "iters_inc": [(10,)]}
 
-train_all_models_on_param_grid(loading_params, training_params)
+train_all_models_on_param_grid(loading_params, batch_params, training_params)

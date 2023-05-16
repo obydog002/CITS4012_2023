@@ -19,7 +19,14 @@ class DocumentModel(nn.Module):
     def __init__(self, n_input, n_hidden, n_class, attention_type=ATTN_TYPE_DOT_PRODUCT, hidden_layers=1, hidden_layer=HIDDEN_TYPE_RNN, bidirectional=True):
         super(DocumentModel, self).__init__()
 
-        self.rnn = nn.RNN(n_input, n_hidden, hidden_layers, batch_first=True, bidirectional=bidirectional)
+        self.attention_type = attention_type
+        if hidden_layer == DocumentModel.HIDDEN_TYPE_LSTM:
+            self.rnn = nn.LSTM(n_input, n_hidden, hidden_layers, batch_first=True, bidirectional=bidirectional)
+        elif hidden_layer == DocumentModel.HIDDEN_TYPE_GRU:
+            self.rnn = nn.GRU(n_input, n_hidden, hidden_layers, batch_fitst=True, bidirectional=bidirectional)
+        else: # vanilla RNN
+            self.rnn = nn.RNN(n_input, n_hidden, hidden_layers, batch_first=True, bidirectional=bidirectional)
+
         linear_layer_size = n_hidden
         if bidirectional:
             linear_layer_size = 2*linear_layer_size
@@ -40,17 +47,22 @@ class DocumentModel(nn.Module):
     def forward(self, input, question_hidden):        
         rnn_output, _ = self.rnn(input)
 
-        attention_output = self.calc_attention(rnn_output, question_hidden, attention_type)
+        attention_output = self.calc_attention(rnn_output, question_hidden, self.attention_type)
 
         # log softmax as we use a negative log likelihood loss
         output = F.log_softmax(self.out(attention_output), dim=-1)
         return output
 
 class QuestionModel(nn.Module):
-    def __init__(self, n_input, n_hidden):
+    def __init__(self, n_input, n_hidden, hidden_layer=DocumentModel.HIDDEN_TYPE_RNN, bidirectional=True):
         super(QuestionModel, self).__init__()
 
-        self.rnn = nn.RNN(n_input, n_hidden, batch_first=True, bidirectional=True)
+        if hidden_layer == DocumentModel.HIDDEN_TYPE_LSTM:
+            self.rnn = nn.LSTM(n_input, n_hidden, batch_first=True, bidirectional=bidirectional)
+        elif hidden_layer == DocumentModel.HIDDEN_TYPE_GRU:
+            self.rnn = nn.GRU(n_input, n_hidden, batch_fitst=True, bidirectional=bidirectional)
+        else: # vanilla RNN
+            self.rnn = nn.RNN(n_input, n_hidden, batch_first=True, bidirectional=bidirectional)
 
     def forward(self, input):
         rnn_output, _ = self.rnn(input)
