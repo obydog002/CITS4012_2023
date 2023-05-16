@@ -28,6 +28,8 @@ import re
 # used for word match
 from nltk.corpus import stopwords as sw
 stop_words = sw.words()
+# need to exclude common punctuation from word match
+stop_words.extend(['.',',','!','?','(',')','"','-',':',';'])
 nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
