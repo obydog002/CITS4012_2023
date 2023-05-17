@@ -215,11 +215,11 @@ loading_params = {"q_cut_size": ["Max"],
                   "doc_with_ner": [True, False], "doc_with_wm": [True, False], "q_with_pos": [True, False], 
                   "q_with_ner": [True, False]}
 batch_params = [128]
-training_params = {"learning_rate": [0.00001, 0.0001, 0.001, 0.01, 0.1], "bidirectional": [False], 
+training_params = {"learning_rate": [0.00001, 0.0001, 0.001, 0.01, 0.1], "bidirectional": [True, False], 
         "attention_type": [QA_RNN.DocumentModel.ATTN_TYPE_DOT_PRODUCT],
         "hidden_type": [QA_RNN.DocumentModel.HIDDEN_TYPE_RNN],
         "doc_hidden_layers": [1],
-        "hidden_size": [50],
-        "iters_inc": [(10,)]}
+        "hidden_size": [100],
+        "iters_inc": [(1,4,5,10)]}
 
 train_all_models_on_param_grid(loading_params, batch_params, training_params)
