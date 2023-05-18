@@ -101,7 +101,7 @@ def do_training_and_eval(train_question_tensor, train_doc_tensor, train_target_t
     doc_embed_size = list(train_loader)[0][1].shape[2]
 
     doc_rnn_model = QA_RNN.DocumentModel(doc_embed_size, hidden_size, number_of_classes, hidden_layers = doc_hidden_layers, bidirectional=bidirectional).to(device)
-    question_rnn_model = QA_RNN.QuestionModel(q_embed_size, hidden_size, bidirectional=bidirectional).to(device)
+    question_rnn_model = QA_RNN.QuestionModel(q_embed_size, hidden_size, hidden_layers = doc_hidden_layers, bidirectional=bidirectional).to(device)
 
     criterion = nn.NLLLoss(weight=torch.Tensor(training_class_weights))
     question_model_optimizer = optim.SGD(question_rnn_model.parameters(), lr=learning_rate)
@@ -150,7 +150,7 @@ def cart(list_dict1, list_dict2):
             l.append(d1 | d2)
     return l
 
-# returns all matching params specified by precence of fields in param
+# returns all matching params specified by presence of fields in param
 def get_matching_params(param, all_params):
     matched = []
     for candidate in all_params:
@@ -259,15 +259,15 @@ def train_all_models_on_param_grid(loading_params, batch_params, training_params
 loading_params = {"q_cut_size": ["Max"],
                   "doc_cut_size": [256], 
                   "answer_type": ["Out_And_In"],
-                  "befaft": [False], "doc_with_pos": [True, False], "doc_with_tfidf": [True, False], 
-                  "doc_with_ner": [True, False], "doc_with_wm": [True, False], "q_with_pos": [True, False], 
-                  "q_with_ner": [True, False]}
+                  "befaft": [False], "doc_with_pos": [False], "doc_with_tfidf": [True], 
+                  "doc_with_ner": [True], "doc_with_wm": [False], "q_with_pos": [False], 
+                  "q_with_ner": [True]}
 batch_params = {"batch": [128]}
-training_params = {"learning_rate": [0.00001, 0.0001, 0.001, 0.01, 0.1], "bidirectional": [True, False], 
-        "attention_type": [QA_RNN.DocumentModel.ATTN_TYPE_DOT_PRODUCT, QA_RNN.DocumentModel.ATTN_TYPE_SCALED_DOT_PRODUCT, QA_RNN.DocumentModel.ATTN_TYPE_COSINE],
-        "hidden_type": [QA_RNN.DocumentModel.HIDDEN_TYPE_RNN],
-        "doc_hidden_layers": [1],
+training_params = {"learning_rate": [0.1, 0.5, 1.0], "bidirectional": [False], 
+        "attention_type": [QA_RNN.DocumentModel.ATTN_TYPE_DOT_PRODUCT],
+        "hidden_type": [QA_RNN.DocumentModel.HIDDEN_TYPE_RNN, QA_RNN.DocumentModel.HIDDEN_TYPE_LSTM, QA_RNN.DocumentModel.HIDDEN_TYPE_GRU],
+        "doc_hidden_layers": [1,2,3,4,5],
         "hidden_size": [100],
-        "iters_inc": [(1,4,5,10)]}
+        "iters_inc": [(1,4,5,10,20,40)]}
 
 train_all_models_on_param_grid(loading_params, batch_params, training_params)

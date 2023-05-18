@@ -54,15 +54,15 @@ class DocumentModel(nn.Module):
         return output
 
 class QuestionModel(nn.Module):
-    def __init__(self, n_input, n_hidden, hidden_layer=DocumentModel.HIDDEN_TYPE_RNN, bidirectional=True):
+    def __init__(self, n_input, n_hidden, hidden_layers=1, hidden_layer=DocumentModel.HIDDEN_TYPE_RNN, bidirectional=True):
         super(QuestionModel, self).__init__()
 
         if hidden_layer == DocumentModel.HIDDEN_TYPE_LSTM:
-            self.rnn = nn.LSTM(n_input, n_hidden, batch_first=True, bidirectional=bidirectional)
+            self.rnn = nn.LSTM(n_input, n_hidden, hidden_layers, batch_first=True, bidirectional=bidirectional)
         elif hidden_layer == DocumentModel.HIDDEN_TYPE_GRU:
-            self.rnn = nn.GRU(n_input, n_hidden, batch_fitst=True, bidirectional=bidirectional)
+            self.rnn = nn.GRU(n_input, n_hidden, hidden_layers, batch_fitst=True, bidirectional=bidirectional)
         else: # vanilla RNN
-            self.rnn = nn.RNN(n_input, n_hidden, batch_first=True, bidirectional=bidirectional)
+            self.rnn = nn.RNN(n_input, n_hidden, hidden_layers, batch_first=True, bidirectional=bidirectional)
 
     def forward(self, input):
         rnn_output, _ = self.rnn(input)
