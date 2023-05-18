@@ -29,6 +29,14 @@ Bef_In_Aft_target2int = {"BA": 0, "IA": 1, "AA": 2}
 question_doc_raw_train = DataPrep.convert_pd_to_json(DataPrep.parse_tsv("../WikiQA-train.tsv"))
 question_doc_raw_test = DataPrep.convert_pd_to_json(DataPrep.parse_tsv("../WikiQA-test.tsv"))
 
+import logging
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+fh = logging.FileHandler(filename='results.log', mode="a", encoding='utf-8', delay=False)
+
+logger.addHandler(fh)
+
 def load_and_get_tensors(loading_param):
     q_cut_size = loading_param["q_cut_size"]
     doc_cut_size = loading_param["doc_cut_size"]
@@ -107,7 +115,7 @@ def do_training_and_eval(train_question_tensor, train_doc_tensor, train_target_t
         test_loss, test_report = Eval.evaluate(test_question_tensor, test_doc_tensor, test_target_tensor, question_rnn_model, doc_rnn_model, criterion)
         total_iters += inc
         results[total_iters] = {"train_loss": train_loss, "train_report": train_report, "test_loss": test_loss, "test_report": test_report}
-        print(f"Trained on {total_iters}.")
+        logger.info(f"Trained on {total_iters}.")
 
     return results
 
@@ -134,6 +142,32 @@ def get_expected_time_s(times, n_left):
     else:
         return statistics.fmean(times) * n_left
 
+# catersian product of list of dicts
+def cart(list_dict1, list_dict2):
+    l = []
+    for d1 in list_dict1:
+        for d2 in list_dict2:
+            l.append(d1 | d2)
+    return l
+
+# returns all matching params specified by precence of fields in param
+def get_matching_params(param, all_params):
+    matched = []
+    for candidate in all_params:
+        if param.items() <= candidate.items():
+            matched.append(candidate)
+
+    return matched
+    
+# checks in the master list, if the next set of params has already been covered in the master list
+def check_if_training_needed(param, all_params):
+    matched = get_matching_params(param, all_params)
+    for m in matched:
+        if frozenset(m.items()) not in master_results:
+            return True
+
+    return False
+
 def print_time_nicely(secs):
     secs = int(secs)
     mins = 0
@@ -145,7 +179,7 @@ def print_time_nicely(secs):
     if mins > 60:
         hours = mins // 60
         time_str = f"{hours}h " + time_str
-    print(f"Expected time {time_str}")
+    logger.info(f"Expected time {time_str}")
 
 from itertools import product
 def train_all_models_on_param_grid(loading_params, batch_params, training_params):
@@ -154,39 +188,54 @@ def train_all_models_on_param_grid(loading_params, batch_params, training_params
         return [dict(zip(keys, p)) for p in product(*values)]
 
     loading_params = get_unrolled_params(loading_params)
+    batch_params = get_unrolled_params(batch_params)
     training_params = get_unrolled_params(training_params)
+
+    all_params = cart(cart(loading_params, batch_params), training_params)
 
     loading_params_len = len(loading_params)
     batch_params_len = len(batch_params)
     training_params_len = len(training_params)
-    print(f"total models: {loading_params_len*batch_params_len*training_params_len}")
+    logger.info(f"total models: {loading_params_len*batch_params_len*training_params_len}")
 
     for li, loading_param in enumerate(loading_params):
-        print("Starting load...")
-        print(f"load {li+1}/{loading_params_len}")
+        # check if training is neccessary
+        if not check_if_training_needed(loading_param, all_params):
+            logger.info("skipping at load.")
+            continue
+
+        logger.info("Starting load...")
+        logger.info(f"load {li+1}/{loading_params_len}")
         before_time = time.time()
         train_question_tensor, train_doc_tensor, train_target_tensor, training_class_weights, test_question_tensor, test_doc_tensor, test_target_tensor, number_of_classes = load_and_get_tensors(loading_param)
         load_times.append(time.time() - before_time)
 
-
         for bi, batch_param in enumerate(batch_params):
-            print("Starting batch load...")
+            if not check_if_training_needed(loading_param | batch_param, all_params):
+                logger.info("skipping at batch.")
+                continue
+
+            logger.info("Starting batch load...")
             batch_full_index = li*batch_params_len + bi
-            print(f"batch {batch_full_index + 1}/{batch_params_len*loading_params_len}")
+            logger.info(f"batch {batch_full_index + 1}/{batch_params_len*loading_params_len}")
             before_time = time.time()
             train_dataset = TensorDataset(train_question_tensor, train_doc_tensor, train_target_tensor)
-            train_loader = DataLoader(dataset=train_dataset, batch_size=batch_param, shuffle=True) 
+            train_loader = DataLoader(dataset=train_dataset, batch_size=batch_param["batch"], shuffle=True) 
             batch_times.append(time.time() - before_time)
 
             for ti, training_param in enumerate(training_params):
+                logger.info(get_matching_params(loading_param | batch_param | training_param, all_params))
+                if not check_if_training_needed(loading_param | batch_param | training_param, all_params):
+                    logger.info("skipping at training.")
+                    continue
+
                 # freeze params for model description
-                frozen_param = loading_param.copy()
-                frozen_param.update({"batch": batch_param})
-                frozen_param.update(training_param)
+                frozen_param = loading_param | batch_param | training_param
                 frozen_param = frozenset(frozen_param.items()) 
 
                 # skip computed values
                 if frozen_param in master_results:
+                    logger.info("second training skip")
                     continue
 
                 train_full_index = training_params_len*batch_full_index + ti
@@ -195,10 +244,9 @@ def train_all_models_on_param_grid(loading_params, batch_params, training_params
                 train_s_to_expect = get_expected_time_s(train_times, loading_params_len*batch_params_len*training_params_len - train_full_index - 1)
                 print_time_nicely(loading_s_to_expect + batch_s_to_expect + train_s_to_expect)
 
-                print("Starting training model...")
-                print(f"train {train_full_index + 1}/{batch_params_len*loading_params_len*training_params_len}")
-                print(frozen_param)
-                print()
+                logger.info("Starting training model...")
+                logger.info(f"train {train_full_index + 1}/{batch_params_len*loading_params_len*training_params_len}")
+                logger.info(frozen_param)
 
                 before_time = time.time()
                 results = do_training_and_eval(train_question_tensor, train_doc_tensor, train_target_tensor, train_loader, test_question_tensor, test_doc_tensor, test_target_tensor, training_class_weights, number_of_classes, training_param)
@@ -214,9 +262,9 @@ loading_params = {"q_cut_size": ["Max"],
                   "befaft": [False], "doc_with_pos": [True, False], "doc_with_tfidf": [True, False], 
                   "doc_with_ner": [True, False], "doc_with_wm": [True, False], "q_with_pos": [True, False], 
                   "q_with_ner": [True, False]}
-batch_params = [128]
+batch_params = {"batch": [128]}
 training_params = {"learning_rate": [0.00001, 0.0001, 0.001, 0.01, 0.1], "bidirectional": [True, False], 
-        "attention_type": [QA_RNN.DocumentModel.ATTN_TYPE_DOT_PRODUCT],
+        "attention_type": [QA_RNN.DocumentModel.ATTN_TYPE_DOT_PRODUCT, QA_RNN.DocumentModel.ATTN_TYPE_SCALED_DOT_PRODUCT, QA_RNN.DocumentModel.ATTN_TYPE_COSINE],
         "hidden_type": [QA_RNN.DocumentModel.HIDDEN_TYPE_RNN],
         "doc_hidden_layers": [1],
         "hidden_size": [100],
