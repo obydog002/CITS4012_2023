@@ -21,6 +21,17 @@ class DataPrep:
             question_id[id]["document"].append((row["Sentence"], row["Label"]))
         return question_id
 
+    def tokenize_json(json):
+        qs = []
+        docs = []
+        ans = []
+        for key in json.keys():
+            toks = DataPrep.tokenize_question_and_doc(json[key])
+            qs.append(toks[0])
+            docs.append(toks[1])
+            ans.append(toks[2])
+        return qs, docs, ans
+
     def tokenize_question_and_doc(question_doc_list, befaft=False):
         tok_q = DataPrep.tokenize_question(question_doc_list["question"])
         tok_doc = []

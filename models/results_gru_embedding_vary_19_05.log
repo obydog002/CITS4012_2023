@@ -1,0 +1,953 @@
+total models: 64
+Starting load...
+load 1/64
+Starting batch load...
+batch 1/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 3h 30m 38s
+Starting training model...
+train 1/64
+frozenset({('bidirectional', False), ('hidden_size', 100), ('hidden_type', 'GRU'), ('q_with_pos', True), ('doc_with_tfidf', True), ('doc_hidden_layers', 2), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_with_pos', True), ('doc_with_wm', True), ('doc_cut_size', 256), ('learning_rate', 0.1), ('befaft', False), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('batch', 128), ('answer_type', 'Out_And_In')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 2/64
+Starting batch load...
+batch 2/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 4h 30m 25s
+Starting training model...
+train 2/64
+frozenset({('bidirectional', False), ('hidden_size', 100), ('hidden_type', 'GRU'), ('q_with_pos', True), ('doc_with_tfidf', True), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('doc_with_pos', True), ('doc_with_wm', True), ('doc_cut_size', 256), ('q_with_ner', False), ('learning_rate', 0.1), ('befaft', False), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('batch', 128), ('answer_type', 'Out_And_In')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 3/64
+Starting batch load...
+batch 3/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 4h 25m 51s
+Starting training model...
+train 3/64
+frozenset({('bidirectional', False), ('hidden_size', 100), ('hidden_type', 'GRU'), ('doc_with_tfidf', True), ('doc_hidden_layers', 2), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_with_pos', True), ('doc_with_wm', True), ('doc_cut_size', 256), ('q_with_pos', False), ('learning_rate', 0.1), ('befaft', False), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('batch', 128), ('answer_type', 'Out_And_In')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 4/64
+total models: 64
+skipping at load.
+skipping at load.
+skipping at load.
+Starting load...
+load 4/64
+Starting batch load...
+batch 4/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 3h 12m 21s
+Starting training model...
+train 4/64
+frozenset({('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 5/64
+Starting batch load...
+batch 5/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 4h 14m 8s
+Starting training model...
+train 5/64
+frozenset({('doc_with_wm', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 6/64
+Starting batch load...
+batch 6/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 4h 7m 48s
+Starting training model...
+train 6/64
+frozenset({('doc_with_wm', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 7/64
+Starting batch load...
+batch 7/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 4h 3m 55s
+Starting training model...
+train 7/64
+frozenset({('doc_with_wm', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 8/64
+Starting batch load...
+batch 8/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 3h 58m 36s
+Starting training model...
+train 8/64
+frozenset({('doc_with_wm', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 9/64
+Starting batch load...
+batch 9/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 3h 40m 30s
+Starting training model...
+train 9/64
+frozenset({('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 10/64
+Starting batch load...
+batch 10/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 3h 25m 44s
+Starting training model...
+train 10/64
+frozenset({('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 11/64
+Starting batch load...
+batch 11/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 3h 14m 51s
+Starting training model...
+train 11/64
+frozenset({('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 12/64
+Starting batch load...
+batch 12/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 3h 4m 51s
+Starting training model...
+train 12/64
+frozenset({('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 13/64
+Starting batch load...
+batch 13/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 56m 44s
+Starting training model...
+train 13/64
+frozenset({('doc_with_wm', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 14/64
+Starting batch load...
+batch 14/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 49m 0s
+Starting training model...
+train 14/64
+frozenset({('doc_with_wm', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 15/64
+Starting batch load...
+batch 15/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 42m 38s
+Starting training model...
+train 15/64
+frozenset({('doc_with_wm', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 16/64
+Starting batch load...
+batch 16/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 36m 22s
+Starting training model...
+train 16/64
+frozenset({('doc_with_wm', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 17/64
+Starting batch load...
+batch 17/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 36m 42s
+Starting training model...
+train 17/64
+frozenset({('doc_with_tfidf', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 18/64
+Starting batch load...
+batch 18/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 36m 2s
+Starting training model...
+train 18/64
+frozenset({('doc_with_tfidf', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 19/64
+Starting batch load...
+batch 19/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 35m 8s
+Starting training model...
+train 19/64
+frozenset({('doc_with_tfidf', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 20/64
+Starting batch load...
+batch 20/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 33m 34s
+Starting training model...
+train 20/64
+frozenset({('doc_with_tfidf', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 21/64
+Starting batch load...
+batch 21/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 31m 53s
+Starting training model...
+train 21/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 22/64
+Starting batch load...
+batch 22/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 29m 41s
+Starting training model...
+train 22/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 23/64
+Starting batch load...
+batch 23/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 27m 29s
+Starting training model...
+train 23/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 24/64
+Starting batch load...
+batch 24/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 24m 53s
+Starting training model...
+train 24/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('doc_with_ner', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 25/64
+Starting batch load...
+batch 25/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 19m 36s
+Starting training model...
+train 25/64
+frozenset({('doc_with_tfidf', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 26/64
+Starting batch load...
+batch 26/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 14m 20s
+Starting training model...
+train 26/64
+frozenset({('doc_with_tfidf', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 27/64
+Starting batch load...
+batch 27/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 9m 28s
+Starting training model...
+train 27/64
+frozenset({('doc_with_tfidf', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 28/64
+Starting batch load...
+batch 28/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 4m 35s
+Starting training model...
+train 28/64
+frozenset({('doc_with_tfidf', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 29/64
+Starting batch load...
+batch 29/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 2h 0m 0s
+Starting training model...
+train 29/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 30/64
+Starting batch load...
+batch 30/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 55m 25s
+Starting training model...
+train 30/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('doc_with_pos', True), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 31/64
+Starting batch load...
+batch 31/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 51m 7s
+Starting training model...
+train 31/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 32/64
+Starting batch load...
+batch 32/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': True, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 46m 47s
+Starting training model...
+train 32/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('doc_with_pos', True), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 33/64
+Starting batch load...
+batch 33/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 44m 14s
+Starting training model...
+train 33/64
+frozenset({('doc_with_pos', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 34/64
+Starting batch load...
+batch 34/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 41m 30s
+Starting training model...
+train 34/64
+frozenset({('doc_with_pos', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 35/64
+Starting batch load...
+batch 35/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 38m 46s
+Starting training model...
+train 35/64
+frozenset({('doc_with_pos', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_ner', True), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 36/64
+Starting batch load...
+batch 36/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 35m 51s
+Starting training model...
+train 36/64
+frozenset({('doc_with_pos', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_ner', True), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 37/64
+Starting batch load...
+batch 37/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 32m 56s
+Starting training model...
+train 37/64
+frozenset({('doc_with_wm', False), ('doc_with_pos', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 38/64
+Starting batch load...
+batch 38/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 29m 52s
+Starting training model...
+train 38/64
+frozenset({('doc_with_wm', False), ('doc_with_pos', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+skipping at load.
+Starting load...
+load 40/64
+Starting batch load...
+batch 40/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 23m 15s
+Starting training model...
+train 40/64
+frozenset({('doc_with_wm', False), ('doc_with_pos', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_ner', True), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 41/64
+Starting batch load...
+batch 41/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 19m 10s
+Starting training model...
+train 41/64
+frozenset({('doc_with_pos', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 42/64
+Starting batch load...
+batch 42/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 15m 5s
+Starting training model...
+train 42/64
+frozenset({('doc_with_pos', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 43/64
+Starting batch load...
+batch 43/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 11m 10s
+Starting training model...
+train 43/64
+frozenset({('doc_with_pos', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 44/64
+Starting batch load...
+batch 44/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 7m 15s
+Starting training model...
+train 44/64
+frozenset({('doc_with_pos', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 45/64
+Starting batch load...
+batch 45/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 1h 3m 27s
+Starting training model...
+train 45/64
+frozenset({('doc_with_wm', False), ('doc_with_pos', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 46/64
+Starting batch load...
+batch 46/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 59m 39s
+Starting training model...
+train 46/64
+frozenset({('doc_with_wm', False), ('doc_with_pos', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 47/64
+Starting batch load...
+batch 47/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 55m 59s
+Starting training model...
+train 47/64
+frozenset({('doc_with_wm', False), ('doc_with_pos', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 48/64
+Starting batch load...
+batch 48/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': True, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 52m 19s
+Starting training model...
+train 48/64
+frozenset({('doc_with_wm', False), ('doc_with_pos', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_tfidf', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 49/64
+Starting batch load...
+batch 49/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 49m 18s
+Starting training model...
+train 49/64
+frozenset({('doc_with_tfidf', False), ('doc_with_pos', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 50/64
+Starting batch load...
+batch 50/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 46m 13s
+Starting training model...
+train 50/64
+frozenset({('doc_with_tfidf', False), ('doc_with_pos', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 51/64
+Starting batch load...
+batch 51/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 43m 7s
+Starting training model...
+train 51/64
+frozenset({('doc_with_tfidf', False), ('doc_with_pos', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_ner', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 52/64
+Starting batch load...
+batch 52/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 39m 58s
+Starting training model...
+train 52/64
+frozenset({('doc_with_tfidf', False), ('doc_with_pos', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_ner', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 53/64
+Starting batch load...
+batch 53/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 36m 47s
+Starting training model...
+train 53/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_pos', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 54/64
+Starting batch load...
+batch 54/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 33m 33s
+Starting training model...
+train 54/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_pos', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_ner', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 55/64
+Starting batch load...
+batch 55/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 30m 19s
+Starting training model...
+train 55/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_pos', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_ner', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 56/64
+Starting batch load...
+batch 56/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': True, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 27m 1s
+Starting training model...
+train 56/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_pos', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_ner', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 57/64
+Starting batch load...
+batch 57/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 23m 31s
+Starting training model...
+train 57/64
+frozenset({('doc_with_tfidf', False), ('doc_with_pos', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 58/64
+Starting batch load...
+batch 58/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 20m 3s
+Starting training model...
+train 58/64
+frozenset({('doc_with_tfidf', False), ('doc_with_pos', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 59/64
+Starting batch load...
+batch 59/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 16m 37s
+Starting training model...
+train 59/64
+frozenset({('doc_with_tfidf', False), ('doc_with_pos', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 60/64
+Starting batch load...
+batch 60/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': True, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 13m 13s
+Starting training model...
+train 60/64
+frozenset({('doc_with_tfidf', False), ('doc_with_pos', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('doc_with_wm', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 61/64
+Starting batch load...
+batch 61/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 9m 52s
+Starting training model...
+train 61/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_pos', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 62/64
+Starting batch load...
+batch 62/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': True, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 6m 33s
+Starting training model...
+train 62/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_pos', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('learning_rate', 0.1), ('batch', 128), ('doc_cut_size', 256), ('bidirectional', False), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('attention_type', 'Dot Product'), ('q_with_pos', True), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 63/64
+Starting batch load...
+batch 63/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': True, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 3m 15s
+Starting training model...
+train 63/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_pos', False), ('doc_with_ner', False), ('q_with_ner', True), ('q_cut_size', 'Max'), ('doc_hidden_layers', 2), ('befaft', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.
+Starting load...
+load 64/64
+Starting batch load...
+batch 64/64
+[{'q_cut_size': 'Max', 'doc_cut_size': 256, 'answer_type': 'Out_And_In', 'befaft': False, 'doc_with_pos': False, 'doc_with_tfidf': False, 'doc_with_ner': False, 'doc_with_wm': False, 'q_with_pos': False, 'q_with_ner': False, 'batch': 128, 'learning_rate': 0.1, 'bidirectional': False, 'attention_type': 'Dot Product', 'hidden_type': 'GRU', 'doc_hidden_layers': 2, 'hidden_size': 100, 'iters_inc': (1, 4, 5, 10, 20, 40)}]
+Expected time 0s
+Starting training model...
+train 64/64
+frozenset({('doc_with_tfidf', False), ('doc_with_wm', False), ('doc_with_pos', False), ('doc_with_ner', False), ('doc_hidden_layers', 2), ('q_cut_size', 'Max'), ('befaft', False), ('q_with_ner', False), ('q_with_pos', False), ('batch', 128), ('doc_cut_size', 256), ('learning_rate', 0.1), ('bidirectional', False), ('attention_type', 'Dot Product'), ('iters_inc', (1, 4, 5, 10, 20, 40)), ('hidden_size', 100), ('answer_type', 'Out_And_In'), ('hidden_type', 'GRU')})
+Trained on 1.
+Trained on 5.
+Trained on 10.
+Trained on 20.
+Trained on 40.
+Trained on 80.

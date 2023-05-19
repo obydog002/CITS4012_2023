@@ -259,15 +259,18 @@ def train_all_models_on_param_grid(loading_params, batch_params, training_params
 loading_params = {"q_cut_size": ["Max"],
                   "doc_cut_size": [256], 
                   "answer_type": ["Out_And_In"],
-                  "befaft": [False], "doc_with_pos": [False], "doc_with_tfidf": [True], 
-                  "doc_with_ner": [True], "doc_with_wm": [False], "q_with_pos": [False], 
-                  "q_with_ner": [True]}
+                  "befaft": [False], "doc_with_pos": [True, False], "doc_with_tfidf": [True, False], 
+                  "doc_with_ner": [True, False], "doc_with_wm": [True, False], "q_with_pos": [True, False], 
+                  "q_with_ner": [True, False]}
 batch_params = {"batch": [128]}
-training_params = {"learning_rate": [0.1, 0.5, 1.0], "bidirectional": [False], 
+training_params = {"learning_rate": [0.1], "bidirectional": [False], 
         "attention_type": [QA_RNN.DocumentModel.ATTN_TYPE_DOT_PRODUCT],
-        "hidden_type": [QA_RNN.DocumentModel.HIDDEN_TYPE_RNN, QA_RNN.DocumentModel.HIDDEN_TYPE_LSTM, QA_RNN.DocumentModel.HIDDEN_TYPE_GRU],
-        "doc_hidden_layers": [1,2,3,4,5],
+        "hidden_type": [QA_RNN.DocumentModel.HIDDEN_TYPE_GRU],
+        "doc_hidden_layers": [2],
         "hidden_size": [100],
         "iters_inc": [(1,4,5,10,20,40)]}
 
+import os
+cpu_count = os.cpu_count()
+torch.set_num_interop_threads(cpu_count)
 train_all_models_on_param_grid(loading_params, batch_params, training_params)
