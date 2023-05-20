@@ -1,7 +1,8 @@
 name: nlp
 channels:
-  - conda-forge
+  - nvidia
   - pytorch
+  - conda-forge
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
@@ -25,7 +26,7 @@ dependencies:
   - c-ares=1.19.0=h5eee18b_0
   - ca-certificates=2023.01.10=h06a4308_0
   - catalogue=2.0.7=py310h06a4308_0
-  - certifi=2022.12.7=py310h06a4308_0
+  - certifi=2023.5.7=py310h06a4308_0
   - cffi=1.15.1=py310h5eee18b_3
   - charset-normalizer=2.0.4=pyhd3eb1b0_0
   - click=8.0.4=py310h06a4308_0
@@ -34,6 +35,13 @@ dependencies:
   - contourpy=1.0.5=py310hdb19cb5_0
   - cpuonly=2.0=0
   - cryptography=39.0.1=py310h9ce1e76_0
+  - cuda-cudart=11.7.99=0
+  - cuda-cupti=11.7.101=0
+  - cuda-libraries=11.7.1=0
+  - cuda-nvrtc=11.7.99=0
+  - cuda-nvtx=11.7.91=0
+  - cuda-runtime=11.7.1=0
+  - cudatoolkit=11.8.0=h6a678d5_0
   - cycler=0.11.0=pyhd3eb1b0_0
   - cymem=2.0.6=py310h295c915_0
   - cython-blis=0.7.7=py310h9102076_0
@@ -53,6 +61,7 @@ dependencies:
   - giflib=5.2.1=h5eee18b_3
   - glib=2.69.1=he621ea3_2
   - gmp=6.2.1=h295c915_3
+  - gmpy2=2.1.2=py310heeb90bb_0
   - gnutls=3.6.15=he1e5248_0
   - gst-plugins-base=1.14.1=h6a678d5_1
   - gstreamer=1.14.1=h5eee18b_1
@@ -89,7 +98,13 @@ dependencies:
   - libbrotlienc=1.0.9=h5eee18b_7
   - libcblas=3.9.0=12_linux64_mkl
   - libclang=10.0.1=default_hb85057a_2
+  - libcublas=11.10.3.66=0
+  - libcufft=10.7.2.124=h4fbf590_0
+  - libcufile=1.6.1.9=0
+  - libcurand=10.3.2.106=0
   - libcurl=7.88.1=h91b91d3_0
+  - libcusolver=11.4.0.1=0
+  - libcusparse=11.7.4.91=0
   - libdeflate=1.17=h5eee18b_0
   - libedit=3.1.20221030=h5eee18b_0
   - libev=4.33=h7f8727e_1
@@ -103,6 +118,8 @@ dependencies:
   - libidn2=2.3.2=h7f8727e_0
   - libllvm10=10.0.1=hbcb73fb_5
   - libnghttp2=1.46.0=hce63b2e_0
+  - libnpp=11.7.4.75=0
+  - libnvjpeg=11.8.0.2=0
   - libpng=1.6.39=h5eee18b_0
   - libpq=12.9=h16c4e8d_3
   - libsodium=1.0.18=h7b6447c_0
@@ -129,8 +146,12 @@ dependencies:
   - mkl-service=2.4.0=py310h7f8727e_0
   - mkl_fft=1.3.1=py310hd6ae3a3_0
   - mkl_random=1.2.2=py310h00e6091_0
+  - mpc=1.1.0=h10f8cd9_1
+  - mpfr=4.0.2=hb69a4c5_1
   - munkres=1.1.4=py_0
   - murmurhash=1.0.7=py310h295c915_0
+  - nb_conda=2.2.1=py310h06a4308_1
+  - nb_conda_kernels=2.3.1=py310h06a4308_0
   - nbclassic=0.5.2=py310h06a4308_0
   - nbclient=0.5.13=py310h06a4308_0
   - nbconvert=6.5.4=py310h06a4308_0
@@ -138,6 +159,7 @@ dependencies:
   - ncurses=6.4=h6a678d5_0
   - nest-asyncio=1.5.6=py310h06a4308_0
   - nettle=3.7.3=hbbd107a_1
+  - networkx=2.8.4=py310h06a4308_1
   - nltk=3.7=pyhd3eb1b0_0
   - notebook=6.5.2=py310h06a4308_0
   - notebook-shim=0.2.2=py310h06a4308_0
@@ -179,7 +201,8 @@ dependencies:
   - python-dateutil=2.8.2=pyhd3eb1b0_0
   - python-fastjsonschema=2.16.2=py310h06a4308_0
   - python_abi=3.10=2_cp310
-  - pytorch=1.13.1=py3.10_cpu_0
+  - pytorch=2.0.1=py3.10_cpu_0
+  - pytorch-cuda=11.7=h778d358_5
   - pytorch-mutex=1.0=cpu
   - pytz=2022.7=py310h06a4308_0
   - pyzmq=23.2.0=py310h6a678d5_0
@@ -205,6 +228,7 @@ dependencies:
   - sqlite=3.40.1=h5082296_0
   - srsly=2.4.6=py310h6a678d5_0
   - stack_data=0.2.0=pyhd3eb1b0_0
+  - sympy=1.11.1=py310h06a4308_0
   - terminado=0.17.1=py310h06a4308_0
   - thinc=8.0.15=py310h2571103_0
   - threadpoolctl=3.1.0=pyh8a188c0_0
@@ -212,8 +236,8 @@ dependencies:
   - tk=8.6.12=h1ccaba5_0
   - toml=0.10.2=pyhd3eb1b0_0
   - tomli=2.0.1=py310h06a4308_0
-  - torchaudio=0.13.1=py310_cpu
-  - torchvision=0.14.1=py310_cpu
+  - torchaudio=2.0.2=py310_cpu
+  - torchvision=0.15.2=py310_cpu
   - tornado=6.2=py310h5eee18b_0
   - tqdm=4.64.1=py310h06a4308_0
   - traitlets=5.7.1=py310h06a4308_0
@@ -233,18 +257,25 @@ dependencies:
   - zlib=1.2.13=h5eee18b_0
   - zstd=1.5.2=ha4553b6_0
   - pip:
-      - cachetools==5.3.0
-      - filelock==3.10.0
-      - gdown==4.6.4
-      - httplib2==0.21.0
-      - oauth2client==4.1.3
-      - protobuf==4.22.1
-      - pyasn1==0.4.8
-      - pyasn1-modules==0.2.8
-      - pydantic==1.8.2
-      - pyqt5-sip==12.11.0
-      - pyyaml==6.0
-      - rsa==4.9
-      - torchtext==0.4.0
-      - uritemplate==4.1.1
-      - wikipedia==1.4.0
+    - cachetools==5.3.0
+    - en-core-web-sm==3.3.0
+    - filelock==3.10.0
+    - gdown==4.6.4
+    - gitdb==4.0.10
+    - gitpython==3.1.31
+    - httplib2==0.21.0
+    - jupyter-server-mathjax==0.2.6
+    - mpmath==1.2.1
+    - nbdime==3.2.2.dev0
+    - oauth2client==4.1.3
+    - protobuf==4.22.1
+    - pyasn1==0.4.8
+    - pyasn1-modules==0.2.8
+    - pydantic==1.8.2
+    - pyqt5-sip==12.11.0
+    - pyyaml==6.0
+    - rsa==4.9
+    - smmap==5.0.0
+    - torchtext==0.4.0
+    - uritemplate==4.1.1
+    - wikipedia==1.4.0
