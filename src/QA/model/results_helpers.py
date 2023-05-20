@@ -46,7 +46,6 @@ class ResultsHelper:
         metric_string = "train_report"
         if not train:
             metric_string = "test_report"
-
         
         for i, model in enumerate(models):
             # should only be 1
@@ -83,6 +82,9 @@ class ResultsHelper:
         if not train:
             metric_string = "test_report"
 
+        best_f1 = -1
+        best_f1_x = -1
+        i = 0
         for key, value in models.items():
             model_results = value[it][metric_string]["1"]
             precisions.append(model_results["precision"])
@@ -90,11 +92,16 @@ class ResultsHelper:
             f1s.append(model_results["f1-score"])
             if var_X != None:
                 x_labels.append(str(dict(key)[var_X]))
-
+            if model_results["f1-score"] > best_f1:
+                best_f1 = model_results["f1-score"]
+                best_f1_x = i
+            i += 1
 
         plt.plot(x_labels, precisions, label="Precision")
         plt.plot(x_labels, recalls, label="Recall")
         plt.plot(x_labels, f1s, label="F1")
+        plt.plot(best_f1_x, best_f1, "*", markersize=8)
+        plt.text(best_f1_x+0.05, best_f1+0.05, f"Best F1 score of {best_f1}")
         if var_X != None:
             if var_X_pretty_name != None:
                 plt.xlabel(var_X_pretty_name)
@@ -112,6 +119,8 @@ class ResultsHelper:
         if not train:
             metric_string = "test_report"
         
+        best_f1 = -1
+        best_f1_x = -1
         # should only be 1 value
         for value in model.values():
             for it in value.keys():
@@ -120,10 +129,15 @@ class ResultsHelper:
                 precisions.append(model_results["precision"])
                 recalls.append(model_results["recall"])
                 f1s.append(model_results["f1-score"])
+                if model_results["f1-score"] > best_f1:
+                    best_f1 = model_results["f1-score"]
+                    best_f1_x = it
 
         plt.plot(its, precisions, label="Precision")
         plt.plot(its, recalls, label="Recall")
         plt.plot(its, f1s, label="F1")
+        plt.plot(best_f1_x, best_f1, "*", markersize=8)
+        plt.text(best_f1_x+0.05, best_f1+0.05, f"Best F1 score of {best_f1}")
 
     def get_unrolled_params(params):
         keys, values = zip(*params.items())

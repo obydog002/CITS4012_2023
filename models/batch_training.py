@@ -263,10 +263,10 @@ loading_params = {"q_cut_size": ["Max"],
                   "doc_with_ner": [True], "doc_with_wm": [False], "q_with_pos": [True], 
                   "q_with_ner": [False]}
 batch_params = {"batch": [128]}
-training_params = {"learning_rate": [0.1], "bidirectional": [False], 
+training_params = {"learning_rate": [0.1], "bidirectional": [False, True], 
         "attention_type": [QA_RNN.DocumentModel.ATTN_TYPE_DOT_PRODUCT],
         "hidden_type": [QA_RNN.DocumentModel.HIDDEN_TYPE_GRU],
-        "doc_hidden_layers": [1,2,3,4,5],
+        "doc_hidden_layers": [2],
         "hidden_size": [100],
         "iters_inc": [(1,4,5,10,20,40)]}
 
