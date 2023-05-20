@@ -268,7 +268,7 @@ training_params = {"learning_rate": [0.1], "bidirectional": [False],
         "hidden_type": [QA_RNN.DocumentModel.HIDDEN_TYPE_GRU],
         "doc_hidden_layers": [2],
         "hidden_size": [100],
-        "iters_inc": [(1,4,5,10,20,40,80)]}
+        "iters_inc": [(1,4,5,10,20,40)]}
 
 import os
 cpu_count = os.cpu_count()
