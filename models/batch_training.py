@@ -100,8 +100,8 @@ def do_training_and_eval(train_question_tensor, train_doc_tensor, train_target_t
     q_embed_size = list(train_loader)[0][0].shape[2]
     doc_embed_size = list(train_loader)[0][1].shape[2]
 
-    doc_rnn_model = QA_RNN.DocumentModel(doc_embed_size, hidden_size, number_of_classes, hidden_layers = doc_hidden_layers, bidirectional=bidirectional).to(device)
-    question_rnn_model = QA_RNN.QuestionModel(q_embed_size, hidden_size, hidden_layers = doc_hidden_layers, bidirectional=bidirectional).to(device)
+    doc_rnn_model = QA_RNN.DocumentModel(doc_embed_size, hidden_size, number_of_classes, attention_type = attention_type, hidden_layers = doc_hidden_layers, hidden_layer=hidden_type,bidirectional=bidirectional).to(device)
+    question_rnn_model = QA_RNN.QuestionModel(q_embed_size, hidden_size, hidden_layers = doc_hidden_layers, hidden_layer=hidden_type, bidirectional=bidirectional).to(device)
 
     criterion = nn.NLLLoss(weight=torch.Tensor(training_class_weights))
     question_model_optimizer = optim.SGD(question_rnn_model.parameters(), lr=learning_rate)
@@ -257,7 +257,7 @@ def train_all_models_on_param_grid(loading_params, batch_params, training_params
 
 
 loading_params = {"q_cut_size": ["Max"],
-                  "doc_cut_size": ["Max"], 
+                  "doc_cut_size": [256], 
                   "answer_type": ["Out_And_In"],
                   "befaft": [False], "doc_with_pos": [False], "doc_with_tfidf": [False], 
                   "doc_with_ner": [True], "doc_with_wm": [False], "q_with_pos": [True], 
@@ -266,7 +266,7 @@ batch_params = {"batch": [128]}
 training_params = {"learning_rate": [0.1], "bidirectional": [False], 
         "attention_type": [QA_RNN.DocumentModel.ATTN_TYPE_DOT_PRODUCT],
         "hidden_type": [QA_RNN.DocumentModel.HIDDEN_TYPE_GRU],
-        "doc_hidden_layers": [2],
+        "doc_hidden_layers": [1,2,3,4,5],
         "hidden_size": [100],
         "iters_inc": [(1,4,5,10,20,40)]}
 

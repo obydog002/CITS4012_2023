@@ -35,35 +35,37 @@ class ResultsHelper:
 
         return matched
 
-    # plot a comparison between 2 models, for the given it
-    def plot_comparison_metrics_on_one_it(model1, model2, it=1, train=True):
+    # plot a comparison on a list of models
+    def plot_comparison_metrics_on_one_it(models, it=1, train=True):
         precisions = []
         recalls = []
         f1s = []
+        best_f1 = -1
+        best_f1_x = -1
 
         metric_string = "train_report"
         if not train:
-            metrin_string = "test_report"
+            metric_string = "test_report"
 
-        # should only be 1
-        for value in model1.values():
-            model_results = value[it][metric_string]["1"]
-            precisions.append(model_results["precision"])
-            recalls.append(model_results["recall"])
-            f1s.append(model_results["f1-score"])
+        
+        for i, model in enumerate(models):
+            # should only be 1
+            for value in model.values():
+                model_results = value[it][metric_string]["1"]
+                precisions.append(model_results["precision"])
+                recalls.append(model_results["recall"])
+                f1s.append(model_results["f1-score"])
 
-        for value in model2.values():
-            model_results = value[it][metric_string]["1"]
-            precisions.append(model_results["precision"])
-            recalls.append(model_results["recall"])
-            f1s.append(model_results["f1-score"])
+                if model_results["f1-score"] > best_f1:
+                    best_f1 = model_results["f1-score"]
+                    best_f1_x = i            
 
-        assert len(precisions) == 2
-        X = [0,1]
+        X = range(len(models))
         plt.plot(X, precisions, label="Precision")
         plt.plot(X, recalls, label="Recall")
         plt.plot(X, f1s, label="F1")
-
+        plt.plot(best_f1_x, best_f1, "*", markersize=8)
+        plt.text(best_f1_x+0.05, best_f1+0.05, f"Best F1 score of {best_f1}")
 
     # plot precisions, recalls, f scores for the given models
     # on the given iteration
